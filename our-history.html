@@ -71,16 +71,18 @@
   }
 
   /* ---------- Story Section ---------- */
+  .story-title {
+    padding-left: 20px;
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
   .story-section {
-    padding: 50px 20px;
+    padding: 30px 20px;
     text-align: center;
     background-color: #c1f2ff;
     border-radius: 15px;
-    margin: 50px 20px;
-  }
-  .story-section h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
+    margin: 0 20px 50px 20px;
   }
   .story-section p {
     max-width: 800px;
@@ -90,12 +92,19 @@
   }
 
   /* ---------- Past Productions + Videos ---------- */
+  .productions-title {
+    padding-left: 20px;
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
   .productions-videos-section {
     display: flex;
     flex-wrap: wrap;
-    padding: 50px 20px;
+    padding: 0 20px 50px 20px;
     gap: 20px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
   }
 
@@ -224,21 +233,20 @@
   <img src="photo5.jpg" alt="Photo 5">
 </section>
 
-<!-- Story Section in Blue Box -->
+<!-- Story Section -->
+<h2 class="story-title">The Story of Mystic Players</h2>
 <section class="story-section">
-  <h2>The Story of Mystic Players</h2>
   <p>
     Mystic Players Revival began as a small group of theater lovers dedicated to bringing performance art back to our community. Over the years, we've staged countless productions, fostering creativity, collaboration, and a love for theater in Medford and beyond...
   </p>
 </section>
 
 <!-- Past Productions + Videos Section -->
-<h2 style="text-align:center; margin-top:50px;">Past Productions</h2>
+<h2 class="productions-title">Past Productions</h2>
 <section class="productions-videos-section">
   <!-- Left: Productions -->
   <div class="productions-box">
     <ul>
-      <!-- 36 Productions -->
       <li>Production 1 (Year)</li>
       <li>Production 2 (Year)</li>
       <li>Production 3 (Year)</li>
