@@ -74,6 +74,9 @@
   .story-section {
     padding: 50px 20px;
     text-align: center;
+    background-color: #c1f2ff;
+    border-radius: 15px;
+    margin: 50px 20px;
   }
   .story-section h2 {
     margin-bottom: 20px;
@@ -124,7 +127,14 @@
     flex: 1 1 300px;
     max-width: 400px;
   }
-  .videos-box iframe {
+  .video-container {
+    text-align: center;
+  }
+  .video-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  .video-container iframe {
     width: 100%;
     height: 200px;
     border: none;
@@ -212,10 +222,9 @@
   <img src="photo3.jpg" alt="Photo 3">
   <img src="photo4.jpg" alt="Photo 4">
   <img src="photo5.jpg" alt="Photo 5">
-  <!-- Add more photos as needed -->
 </section>
 
-<!-- Story Section -->
+<!-- Story Section in Blue Box -->
 <section class="story-section">
   <h2>The Story of Mystic Players</h2>
   <p>
@@ -229,6 +238,7 @@
   <!-- Left: Productions -->
   <div class="productions-box">
     <ul>
+      <!-- 36 Productions -->
       <li>Production 1 (Year)</li>
       <li>Production 2 (Year)</li>
       <li>Production 3 (Year)</li>
@@ -268,11 +278,20 @@
     </ul>
   </div>
 
-  <!-- Right: Videos (stacked vertically) -->
+  <!-- Right: Videos with Titles -->
   <div class="videos-box">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+    <div class="video-container">
+      <h3>Show Title 1</h3>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+      <h3>Show Title 2</h3>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+    </div>
+    <div class="video-container">
+      <h3>Show Title 3</h3>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+    </div>
   </div>
 </section>
 
