@@ -6,9 +6,139 @@
 <title>Our History - Mystic Players Revival</title>
 <link href="https://fonts.googleapis.com/css2?family=Lucky+Bones&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  body {
+    font-family: 'Lucky Bones', cursive;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ---------- Our Members Grid ---------- */
+  .members-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f0f8ff;
+  }
+  .members-section h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+  }
+  .members-section p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  .member-box {
+    background-color: #c1f2ff;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  .member-box:hover {
+    transform: translateY(-5px);
+  }
+  .member-box img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .member-box h3 {
+    margin: 10px 0 5px;
+    font-size: 1rem;
+  }
+  .member-box p {
+    font-size: 0.8rem;
+  }
+
+  /* ---------- Slideshow ---------- */
+  .slideshow {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slides img {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  .slide-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  .slide-buttons button {
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  /* ---------- Story Section ---------- */
+  .story-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #e6f7ff;
+  }
+  .story-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  .story-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ---------- Past Productions ---------- */
+  .productions-section {
+    padding: 50px 20px;
+    background-color: #f0f8ff;
+    text-align: center;
+  }
+  .productions-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  .productions-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .production-box {
+    width: 150px;
+    text-align: center;
+  }
+  .production-box img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .production-box p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
+</style>
 </head>
 <body>
 
+<!-- Navigation (UNCHANGED) -->
 <nav>
   <div class="logo"><img src="logo.png" alt="Logo"></div>
   <ul>
@@ -35,10 +165,76 @@
   </ul>
 </nav>
 
-<section>
-  <h1>Our History</h1>
-  <p>Add your history content here.</p>
+<!-- Members Section -->
+<section class="members-section">
+  <h2>Our Members</h2>
+  <p>Meet the 25 talented individuals who have contributed to our theater's legacy.</p>
+  <div class="members-grid">
+    <!-- Example member box -->
+    <div class="member-box">
+      <img src="member1.jpg" alt="Member 1">
+      <h3>Member Name 1</h3>
+      <p>Role / Description</p>
+    </div>
+    <!-- Repeat 25 times for each member -->
+  </div>
 </section>
+
+<!-- Slideshow Section -->
+<section class="slideshow">
+  <div class="slides">
+    <img src="slide1.jpg" alt="Slide 1">
+    <img src="slide2.jpg" alt="Slide 2">
+    <img src="slide3.jpg" alt="Slide 3">
+  </div>
+  <div class="slide-buttons">
+    <button id="prev">&#10094;</button>
+    <button id="next">&#10095;</button>
+  </div>
+</section>
+
+<!-- Story Section -->
+<section class="story-section">
+  <h2>The Story of Mystic Players</h2>
+  <p>
+    Mystic Players Revival began as a small group of theater lovers dedicated to bringing performance art back to our community. Over the years, we've staged countless productions, fostering creativity, collaboration, and a love for theater in Medford and beyond...
+  </p>
+</section>
+
+<!-- Past Productions Section -->
+<section class="productions-section">
+  <h2>Past Productions</h2>
+  <div class="productions-list">
+    <div class="production-box">
+      <img src="production1.jpg" alt="Production 1">
+      <p>Production Name 1</p>
+    </div>
+    <div class="production-box">
+      <img src="production2.jpg" alt="Production 2">
+      <p>Production Name 2</p>
+    </div>
+    <!-- Add more production boxes as needed -->
+  </div>
+</section>
+
+<!-- Slideshow Script -->
+<script>
+  const slides = document.querySelector('.slides');
+  const images = document.querySelectorAll('.slides img');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  let index = 0;
+
+  function showSlide(i) {
+    if (i < 0) index = images.length - 1;
+    else if (i >= images.length) index = 0;
+    else index = i;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+  }
+
+  prevBtn.addEventListener('click', () => showSlide(index - 1));
+  nextBtn.addEventListener('click', () => showSlide(index + 1));
+</script>
 
 </body>
 </html>
