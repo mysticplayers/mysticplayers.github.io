@@ -13,11 +13,10 @@
     padding: 0;
   }
 
-  /* ---------- Our Members Grid ---------- */
+  /* ---------- Members Section ---------- */
   .members-section {
     padding: 50px 20px;
     text-align: center;
-    background-color: #f0f8ff;
   }
   .members-section h2 {
     margin-bottom: 10px;
@@ -93,7 +92,6 @@
   .story-section {
     padding: 50px 20px;
     text-align: center;
-    background-color: #e6f7ff;
   }
   .story-section h2 {
     margin-bottom: 20px;
@@ -109,7 +107,6 @@
   /* ---------- Past Productions ---------- */
   .productions-section {
     padding: 50px 20px;
-    background-color: #f0f8ff;
     text-align: center;
   }
   .productions-section h2 {
@@ -117,22 +114,15 @@
     font-size: 2rem;
   }
   .productions-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: left;
   }
-  .production-box {
-    width: 150px;
-    text-align: center;
-  }
-  .production-box img {
-    width: 100%;
-    border-radius: 10px;
-  }
-  .production-box p {
-    margin-top: 5px;
-    font-size: 0.9rem;
+  .productions-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
   }
 </style>
 </head>
@@ -170,13 +160,32 @@
   <h2>Our Members</h2>
   <p>Meet the 25 talented individuals who have contributed to our theater's legacy.</p>
   <div class="members-grid">
-    <!-- Example member box -->
-    <div class="member-box">
-      <img src="member1.jpg" alt="Member 1">
-      <h3>Member Name 1</h3>
-      <p>Role / Description</p>
-    </div>
-    <!-- Repeat 25 times for each member -->
+    <!-- 25 Member Boxes -->
+    <div class="member-box"><img src="member1.jpg" alt="Member 1"><h3>Member 1</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member2.jpg" alt="Member 2"><h3>Member 2</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member3.jpg" alt="Member 3"><h3>Member 3</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member4.jpg" alt="Member 4"><h3>Member 4</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member5.jpg" alt="Member 5"><h3>Member 5</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member6.jpg" alt="Member 6"><h3>Member 6</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member7.jpg" alt="Member 7"><h3>Member 7</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member8.jpg" alt="Member 8"><h3>Member 8</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member9.jpg" alt="Member 9"><h3>Member 9</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member10.jpg" alt="Member 10"><h3>Member 10</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member11.jpg" alt="Member 11"><h3>Member 11</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member12.jpg" alt="Member 12"><h3>Member 12</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member13.jpg" alt="Member 13"><h3>Member 13</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member14.jpg" alt="Member 14"><h3>Member 14</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member15.jpg" alt="Member 15"><h3>Member 15</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member16.jpg" alt="Member 16"><h3>Member 16</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member17.jpg" alt="Member 17"><h3>Member 17</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member18.jpg" alt="Member 18"><h3>Member 18</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member19.jpg" alt="Member 19"><h3>Member 19</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member20.jpg" alt="Member 20"><h3>Member 20</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member21.jpg" alt="Member 21"><h3>Member 21</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member22.jpg" alt="Member 22"><h3>Member 22</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member23.jpg" alt="Member 23"><h3>Member 23</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member24.jpg" alt="Member 24"><h3>Member 24</h3><p>Role / Description</p></div>
+    <div class="member-box"><img src="member25.jpg" alt="Member 25"><h3>Member 25</h3><p>Role / Description</p></div>
   </div>
 </section>
 
@@ -204,17 +213,14 @@
 <!-- Past Productions Section -->
 <section class="productions-section">
   <h2>Past Productions</h2>
-  <div class="productions-list">
-    <div class="production-box">
-      <img src="production1.jpg" alt="Production 1">
-      <p>Production Name 1</p>
-    </div>
-    <div class="production-box">
-      <img src="production2.jpg" alt="Production 2">
-      <p>Production Name 2</p>
-    </div>
-    <!-- Add more production boxes as needed -->
-  </div>
+  <ul class="productions-list">
+    <li>Production Name 1 (Year)</li>
+    <li>Production Name 2 (Year)</li>
+    <li>Production Name 3 (Year)</li>
+    <li>Production Name 4 (Year)</li>
+    <li>Production Name 5 (Year)</li>
+    <!-- Add more productions as needed -->
+  </ul>
 </section>
 
 <!-- Slideshow Script -->
