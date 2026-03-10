@@ -9,7 +9,6 @@
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Lucky+Bones&display=swap" rel="stylesheet">
 
-<!-- Shared CSS -->
 <style>
 body {
   font-family: 'Lucky Bones', cursive;
@@ -50,7 +49,6 @@ nav a {
 nav li:hover > a {
   color: #4cc9f0;
 }
-/* Dropdown menu */
 nav li ul {
   display: none;
   position: absolute;
@@ -86,21 +84,68 @@ p {
   margin: 0 auto;
   line-height: 1.6;
 }
-.team-member {
-  margin-top: 40px;
+
+/* TEAM GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 50px auto 0;
 }
+
+/* TEAM BOX */
+.team-member {
+  background: #c1f2ff;
+  padding: 25px;
+  border-radius: 12px;
+  color: #333;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.team-member:nth-child(2){ animation-delay:.2s;}
+.team-member:nth-child(3){ animation-delay:.4s;}
+.team-member:nth-child(4){ animation-delay:.6s;}
+
 .team-member img {
-  width: 200px;
+  width: 150px;
   border-radius: 10px;
   display: block;
   margin: 10px auto;
 }
+
 .team-member h3 {
   margin: 10px 0 5px;
 }
+
+.team-member h4 {
+  margin: 5px 0;
+  font-weight: normal;
+}
+
 .team-member p {
-  font-size: 16px;
-  color: #555;
+  font-size: 15px;
+  color: #333;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.team-member:hover{
+  transform: translateY(-5px) scale(1.03);
+  transition: .3s;
 }
 </style>
 </head>
@@ -109,7 +154,7 @@ p {
 
 <!-- Navigation -->
 <nav>
-  <div class="logo"><img src="MPR-logo.png" alt="MPR-logo.png"></div>
+  <div class="logo"><img src="MPR-logo.png" alt="MPR-logo"></div>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="#">About Mystic Players</a>
@@ -134,31 +179,41 @@ p {
   </ul>
 </nav>
 
-<!-- Our Team Section -->
 <section>
-  <h1>Our Team</h1>
-  <p>Meet the incredible people who make Mystic Players Revival possible! Our team includes passionate performers, dedicated directors, and volunteers committed to bringing the magic of theatre to Medford.</p>
+<h1>Our Team</h1>
+<p>Meet the incredible people who make Mystic Players Revival possible! Our team includes passionate performers, dedicated directors, and volunteers committed to bringing the magic of theatre to Medford.</p>
 
-  <!-- Team Member Example -->
-  <div class="team-member">
-    <img src="team-member1.jpg" alt="Team Member Name">
-    <h3>Jane Doe</h3>
-    <p>Artistic Director</p>
-  </div>
+<div class="team-grid">
 
-  <div class="team-member">
-    <img src="team-member2.jpg" alt="Team Member Name">
-    <h3>John Smith</h3>
-    <p>Technical Director</p>
-  </div>
+<div class="team-member">
+<img src="team1.jpg">
+<h3>Artistic Director</h3>
+<h4>Jane Doe</h4>
+<p>Jane oversees artistic vision and production planning for Mystic Players Revival.</p>
+</div>
 
-  <div class="team-member">
-    <img src="team-member3.jpg" alt="Team Member Name">
-    <h3>Emily Brown</h3>
-    <p>Stage Manager</p>
-  </div>
+<div class="team-member">
+<img src="team2.jpg">
+<h3>Technical Director</h3>
+<h4>John Smith</h4>
+<p>John manages stage design, lighting, and all technical production elements.</p>
+</div>
 
-  <!-- Add more team members here -->
+<div class="team-member">
+<img src="team3.jpg">
+<h3>Stage Manager</h3>
+<h4>Emily Brown</h4>
+<p>Emily coordinates rehearsals and ensures every production runs smoothly.</p>
+</div>
+
+<div class="team-member">
+<img src="team4.jpg">
+<h3>Marketing Director</h3>
+<h4>Michael Lee</h4>
+<p>Michael promotes shows, manages social media, and connects with the community.</p>
+</div>
+
+</div>
 </section>
 
 </body>
