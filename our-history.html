@@ -104,25 +104,63 @@
     line-height: 1.6;
   }
 
-  /* ---------- Past Productions ---------- */
-  .productions-section {
+  /* ---------- Past Productions + Videos ---------- */
+  .productions-videos-section {
+    display: flex;
+    flex-wrap: wrap;
     padding: 50px 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Left blue box for productions */
+  .productions-box {
+    background-color: #c1f2ff;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 300px;
+    max-width: 400px;
+    height: auto;
+    overflow-y: auto;
+  }
+  .productions-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
     text-align: center;
   }
-  .productions-section h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-  }
-  .productions-list {
+  .productions-box ul {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
-    max-width: 400px;
-    text-align: left;
+    margin: 0;
   }
-  .productions-list li {
-    margin-bottom: 10px;
+  .productions-box ul li {
+    margin-bottom: 8px;
     font-size: 1rem;
+  }
+
+  /* Right box for YouTube videos */
+  .videos-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    flex: 2 1 600px;
+  }
+  .videos-box iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  @media(max-width: 800px){
+    .productions-videos-section {
+      flex-direction: column;
+      align-items: center;
+    }
+    .videos-box iframe {
+      height: 180px;
+    }
   }
 </style>
 </head>
@@ -210,17 +248,57 @@
   </p>
 </section>
 
-<!-- Past Productions Section -->
-<section class="productions-section">
-  <h2>Past Productions</h2>
-  <ul class="productions-list">
-    <li>Production Name 1 (Year)</li>
-    <li>Production Name 2 (Year)</li>
-    <li>Production Name 3 (Year)</li>
-    <li>Production Name 4 (Year)</li>
-    <li>Production Name 5 (Year)</li>
-    <!-- Add more productions as needed -->
-  </ul>
+<!-- Past Productions + Videos Section -->
+<section class="productions-videos-section">
+  <!-- Left: Productions -->
+  <div class="productions-box">
+    <h2>Past Productions</h2>
+    <ul>
+      <li>Production 1 (Year)</li>
+      <li>Production 2 (Year)</li>
+      <li>Production 3 (Year)</li>
+      <li>Production 4 (Year)</li>
+      <li>Production 5 (Year)</li>
+      <li>Production 6 (Year)</li>
+      <li>Production 7 (Year)</li>
+      <li>Production 8 (Year)</li>
+      <li>Production 9 (Year)</li>
+      <li>Production 10 (Year)</li>
+      <li>Production 11 (Year)</li>
+      <li>Production 12 (Year)</li>
+      <li>Production 13 (Year)</li>
+      <li>Production 14 (Year)</li>
+      <li>Production 15 (Year)</li>
+      <li>Production 16 (Year)</li>
+      <li>Production 17 (Year)</li>
+      <li>Production 18 (Year)</li>
+      <li>Production 19 (Year)</li>
+      <li>Production 20 (Year)</li>
+      <li>Production 21 (Year)</li>
+      <li>Production 22 (Year)</li>
+      <li>Production 23 (Year)</li>
+      <li>Production 24 (Year)</li>
+      <li>Production 25 (Year)</li>
+      <li>Production 26 (Year)</li>
+      <li>Production 27 (Year)</li>
+      <li>Production 28 (Year)</li>
+      <li>Production 29 (Year)</li>
+      <li>Production 30 (Year)</li>
+      <li>Production 31 (Year)</li>
+      <li>Production 32 (Year)</li>
+      <li>Production 33 (Year)</li>
+      <li>Production 34 (Year)</li>
+      <li>Production 35 (Year)</li>
+      <li>Production 36 (Year)</li>
+    </ul>
+  </div>
+
+  <!-- Right: Videos -->
+  <div class="videos-box">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+  </div>
 </section>
 
 <!-- Slideshow Script -->
