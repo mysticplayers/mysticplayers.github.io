@@ -1,23 +1,164 @@
 <!DOCTYPE html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Team - Mystic Players Revival</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lucky+Bones&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Team</title>
-<link href="https://fonts.googleapis.com/css2?family=Lucky+Bones&display=swap" rel="stylesheet">
-<style>
+<title>Our Team - Mystic Players Revival</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Lucky+Bones&display=swap" rel="stylesheet">
+
+<!-- Shared CSS -->
+<style>
+body {
+  font-family: 'Lucky Bones', cursive;
+  background: white;
+  color: #333;
+  margin: 0;
+}
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd;
+  background: white;
+}
+nav .logo img {
+  height: 60px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  position: relative;
+  margin-left: 25px;
+}
+nav a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+nav li:hover > a {
+  color: #4cc9f0;
+}
+/* Dropdown menu */
+nav li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  min-width: 180px;
+}
+nav li:hover ul {
+  display: block;
+}
+nav li ul li a {
+  padding: 10px 15px;
+}
+nav li ul li a:hover {
+  background: #f0f0f0;
+  color: #4cc9f0;
+}
+
+/* Section styling */
+section {
+  padding: 70px 20px;
+  text-align: center;
+}
+h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.team-member {
+  margin-top: 40px;
+}
+.team-member img {
+  width: 200px;
+  border-radius: 10px;
+  display: block;
+  margin: 10px auto;
+}
+.team-member h3 {
+  margin: 10px 0 5px;
+}
+.team-member p {
+  font-size: 16px;
+  color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="logo"><img src="logo.png" alt="Mystic Players Revival Logo"></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">About Mystic Players</a>
+      <ul>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="our-history.html">Our History</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Season 2026-27</a>
+      <ul>
+        <li><a href="auditions.html">Auditions</a></li>
+        <li><a href="tickets.html">Tickets</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Support Us</a>
+      <ul>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="sponsor.html">Become A Sponsor</a></li>
+      </ul>
+    </li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Our Team Section -->
 <section>
   <h1>Our Team</h1>
-  <p>Write your team content here.</p>
+  <p>Meet the incredible people who make Mystic Players Revival possible! Our team includes passionate performers, dedicated directors, and volunteers committed to bringing the magic of theatre to Medford.</p>
+
+  <!-- Team Member Example -->
+  <div class="team-member">
+    <img src="team-member1.jpg" alt="Team Member Name">
+    <h3>Jane Doe</h3>
+    <p>Artistic Director</p>
+  </div>
+
+  <div class="team-member">
+    <img src="team-member2.jpg" alt="Team Member Name">
+    <h3>John Smith</h3>
+    <p>Technical Director</p>
+  </div>
+
+  <div class="team-member">
+    <img src="team-member3.jpg" alt="Team Member Name">
+    <h3>Emily Brown</h3>
+    <p>Stage Manager</p>
+  </div>
+
+  <!-- Add more team members here -->
 </section>
 
 </body>
