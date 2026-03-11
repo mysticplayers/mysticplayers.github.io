@@ -135,9 +135,12 @@ left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
 color:white;
-background:rgba(0,0,0,0.35);
+/* Background removed to delete the grey box */
+background:transparent; 
 padding:40px;
 border-radius:10px;
+/* Added shadow so text is visible over light images */
+text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .hero-text h1{
@@ -203,7 +206,8 @@ margin-top:0;
 
 .sponsors{
 padding:60px 10%;
-background:#f8f8f8;
+/* Background changed to white to remove the grey section */
+background:white;
 text-align:center;
 }
 
@@ -242,8 +246,6 @@ color:#777;
 
 <body>
 
-<!-- NAVIGATION -->
-
 <nav>
 
 <div class="logo">Mystic Players Revival</div>
@@ -277,8 +279,6 @@ color:#777;
 </nav>
 
 
-<!-- HERO SLIDESHOW -->
-
 <section class="hero">
 
 <div class="slide"></div>
@@ -293,8 +293,6 @@ color:#777;
 
 </section>
 
-
-<!-- ABOUT PANELS -->
 
 <section class="about">
 
@@ -330,8 +328,6 @@ color:#777;
 
 </section>
 
-
-<!-- SPONSORS -->
 
 <section class="sponsors">
 
