@@ -23,7 +23,7 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 40px;
+padding:10px 40px; /* Reduced padding slightly for logo fit */
 background:white;
 border-bottom:1px solid #eee;
 position:sticky;
@@ -31,9 +31,10 @@ top:0;
 z-index:1000;
 }
 
-.logo{
-font-weight:600;
-font-size:22px;
+.logo img {
+height: 50px; /* Adjust this value to scale your logo */
+width: auto;
+display: block;
 }
 
 .nav-links{
@@ -135,11 +136,9 @@ left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
 color:white;
-/* Background removed to delete the grey box */
 background:transparent; 
 padding:40px;
 border-radius:10px;
-/* Added shadow so text is visible over light images */
 text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
@@ -206,7 +205,6 @@ margin-top:0;
 
 .sponsors{
 padding:60px 10%;
-/* Background changed to white to remove the grey section */
 background:white;
 text-align:center;
 }
@@ -248,7 +246,9 @@ color:#777;
 
 <nav>
 
-<div class="logo">Mystic Players Revival</div>
+<div class="logo">
+    <a href="#"><img src="logo.png" alt="Mystic Players Revival Logo"></a>
+</div>
 
 <ul class="nav-links">
 
