@@ -1,86 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mystic Players Revival</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
-
 <style>
-
-body{
-margin:0;
-font-family:'Fredoka', sans-serif;
-background:white;
-color:#333;
-}
-
-/* NAVIGATION */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 40px;
-background:white;
-border-bottom:1px solid #eee;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo{
-font-weight:600;
-font-size:22px;
-}
-
-.nav-links{
-list-style:none;
-display:flex;
-gap:25px;
-margin:0;
-padding:0;
-}
-
-.nav-links li{
-position:relative;
-}
-
-.nav-links a{
-text-decoration:none;
-color:#333;
-font-weight:500;
-}
-
-.nav-links a:hover{
-color:#1c9ed9;
-}
-
-/* DROPDOWN */
-
-.dropdown{
-display:none;
-position:absolute;
-top:35px;
-left:0;
-background:white;
-border:1px solid #eee;
-box-shadow:0 5px 10px rgba(0,0,0,0.1);
-padding:10px 0;
-min-width:180px;
-}
-
-.dropdown a{
-display:block;
-padding:10px 15px;
-}
-
-.nav-links li:hover .dropdown{
-display:block;
-}
-
 
 /* HERO SLIDESHOW */
 
@@ -101,22 +19,22 @@ animation:slideShow 20s infinite;
 }
 
 .slide:nth-child(1){
-background-image:url("slide1.jpg");
+background-image:url("https://your-image-link-1.jpg");
 animation-delay:0s;
 }
 
 .slide:nth-child(2){
-background-image:url("slide2.jpg");
+background-image:url("https://your-image-link-2.jpg");
 animation-delay:5s;
 }
 
 .slide:nth-child(3){
-background-image:url("slide3.jpg");
+background-image:url("https://your-image-link-3.jpg");
 animation-delay:10s;
 }
 
 .slide:nth-child(4){
-background-image:url("slide4.jpg");
+background-image:url("https://your-image-link-4.jpg");
 animation-delay:15s;
 }
 
@@ -135,224 +53,17 @@ left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
 color:white;
-background:rgba(0,0,0,0.35);
-padding:40px;
-border-radius:10px;
+padding:20px;
 }
 
 .hero-text h1{
-font-size:40px;
+font-size:42px;
 margin:0;
 }
 
 .hero-text p{
 margin-top:10px;
-font-size:18px;
-}
-
-
-/* ABOUT SECTION */
-
-.about{
-padding:70px 10%;
-text-align:center;
-}
-
-.about h2{
-font-size:32px;
-margin-bottom:40px;
-}
-
-.panels{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.panel{
-background:#c1f2ff;
-border-radius:10px;
-overflow:hidden;
-transition:0.3s;
-cursor:pointer;
-text-decoration:none;
-color:#333;
-}
-
-.panel:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 20px rgba(0,0,0,0.15);
-}
-
-.panel img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.panel-content{
-padding:20px;
-}
-
-.panel-content h3{
-margin-top:0;
-}
-
-
-/* SPONSORS */
-
-.sponsors{
-padding:60px 10%;
-background:#f8f8f8;
-text-align:center;
-}
-
-.sponsors h2{
-margin-bottom:30px;
-}
-
-.sponsor-logos{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-align-items:center;
-}
-
-.sponsor-logos img{
-height:70px;
-opacity:0.8;
-transition:0.3s;
-}
-
-.sponsor-logos img:hover{
-opacity:1;
-transform:scale(1.05);
-}
-
-footer{
-text-align:center;
-padding:25px;
-font-size:14px;
-color:#777;
+font-size:20px;
 }
 
 </style>
-</head>
-
-<body>
-
-<!-- NAVIGATION -->
-
-<nav>
-
-<div class="logo">Mystic Players Revival</div>
-
-<ul class="nav-links">
-
-<li><a href="#">Home</a></li>
-
-<li>
-<a href="#">About Us</a>
-<div class="dropdown">
-<a href="history.html">Our History</a>
-<a href="past-productions.html">Past Productions</a>
-</div>
-</li>
-
-<li>
-<a href="#">Season 2026-2027</a>
-<div class="dropdown">
-<a href="auditions.html">Auditions</a>
-<a href="tickets.html">Tickets</a>
-<a href="donate.html">Donate</a>
-<a href="sponsor.html">Sponsor A Season</a>
-</div>
-</li>
-
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-
-</nav>
-
-
-<!-- HERO SLIDESHOW -->
-
-<section class="hero">
-
-<div class="slide"></div>
-<div class="slide"></div>
-<div class="slide"></div>
-<div class="slide"></div>
-
-<div class="hero-text">
-<h1>Reviving Dreams, One Performance At A Time</h1>
-<p>Medford, Massachusetts</p>
-</div>
-
-</section>
-
-
-<!-- ABOUT PANELS -->
-
-<section class="about">
-
-<h2>About Us</h2>
-
-<div class="panels">
-
-<a href="mission.html" class="panel">
-<img src="mission.jpg">
-<div class="panel-content">
-<h3>Our Mission</h3>
-<p>Discover our commitment to reviving theatre and creating opportunities for performers and artists in our community.</p>
-</div>
-</a>
-
-<a href="season.html" class="panel">
-<img src="season.jpg">
-<div class="panel-content">
-<h3>Upcoming Season</h3>
-<p>Explore our exciting 2026-2027 lineup of productions, performances, and unforgettable theatrical experiences.</p>
-</div>
-</a>
-
-<a href="get-involved.html" class="panel">
-<img src="involved.jpg">
-<div class="panel-content">
-<h3>Get Involved</h3>
-<p>Audition, volunteer, donate, or sponsor a season and help bring theatre back to life.</p>
-</div>
-</a>
-
-</div>
-
-</section>
-
-
-<!-- SPONSORS -->
-
-<section class="sponsors">
-
-<h2>Our Incredible Sponsors</h2>
-
-<div class="sponsor-logos">
-
-<img src="sponsor1.png">
-<img src="sponsor2.png">
-<img src="sponsor3.png">
-<img src="sponsor4.png">
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 Mystic Players Revival
-
-</footer>
-
-</body>
-</html>
