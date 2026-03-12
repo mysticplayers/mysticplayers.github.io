@@ -46,9 +46,7 @@ nav {
     padding: 0;
 }
 
-.nav-links li {
-    position: relative; 
-}
+.nav-links li { position: relative; }
 
 .nav-links a {
     text-decoration: none;
@@ -60,7 +58,7 @@ nav {
 
 /* --- DROPDOWN MENU --- */
 .dropdown {
-    list-style: none; /* Removes the dots */
+    list-style: none;
     display: none;
     position: absolute;
     top: 100%;
@@ -71,8 +69,8 @@ nav {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     min-width: 200px;
     border-radius: 8px;
-    padding: 10px 0; /* Keeps some space inside the box */
-    margin: 0; /* Removes default list margin */
+    padding: 10px 0;
+    margin: 0;
     z-index: 100;
     opacity: 0;
     transition: all 0.3s ease;
@@ -165,43 +163,191 @@ nav {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.hero-text h1 span:nth-child(1) { animation-delay: 0.4s; }
-.hero-text h1 span:nth-child(2) { animation-delay: 0.6s; }
-.hero-text h1 span:nth-child(3) { animation-delay: 0.8s; }
-.hero-text h1 span:nth-child(4) { animation-delay: 1.0s; }
-.hero-text h1 span:nth-child(5) { animation-delay: 1.2s; }
-.hero-text h1 span:nth-child(6) { animation-delay: 1.4s; }
-
-.hero-text p {
-    opacity: 0;
-    animation: fadeInUp 0.8s forwards ease-out 1.5s;
+/* --- SECTION DIVIDERS --- */
+.divider-line {
+    height: 8px;
+    background-color: #c1f2ff; /* Your signature blue */
+    width: 100%;
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.about{ padding:70px 10%; text-align:center; }
-.panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-.panel{
+.about { padding: 80px 10%; text-align: center; }
+.panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.panel {
     background: white; border-radius: 15px; overflow: hidden;
     transition: 0.4s; text-decoration: none; color: #333;
     box-shadow: 0 10px 20px rgba(28, 158, 217, 0.15); display: block;
 }
-.panel:hover{ transform: translateY(-12px); box-shadow: 0 15px 30px rgba(28, 158, 217, 0.3); }
-.panel-content{ padding: 25px; }
-.panel-content h3{ color: #1c9ed9; }
+.panel:hover { transform: translateY(-12px); box-shadow: 0 15px 30px rgba(28, 158, 217, 0.3); }
+.panel-content { padding: 25px; }
+.panel-content h3 { color: #1c9ed9; }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-.sponsors{ padding:60px 10%; text-align:center; }
-.sponsor-logos{ display:flex; flex-wrap:wrap; justify-content:center; gap:40px; }
-.sponsor-logos img{ height:60px; filter: grayscale(100%); opacity:0.6; transition: 0.4s; }
-.sponsor-logos img:hover{ filter: grayscale(0%); opacity:1; transform: scale(1.1); }
+.sponsors { padding: 80px 10%; text-align: center; background-color: #fafdfd; }
+.sponsor-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+.sponsor-logos img { height: 60px; filter: grayscale(100%); opacity: 0.6; transition: 0.4s; }
+.sponsor-logos img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
 
-footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
+/* --- FOOTER --- */
+footer {
+    background: #c1f2ff;
+    padding: 60px 5% 30px 5%;
+    color: #2c5d6b;
+    border-top: 2px solid #abe2f0;
+}
+
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+.footer-left {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.footer-logo img {
+    height: 110px;
+    width: auto;
+}
+
+.footer-quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.footer-quick-links li {
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-quick-links a {
+    text-decoration: none;
+    color: #2c5d6b;
+    display: flex;
+    align-items: center;
+}
+
+.footer-quick-links a::before {
+    content: "→";
+    margin-right: 10px;
+    color: #2c5d6b;
+    font-weight: bold;
+}
+
+.footer-right {
+    flex: 1;
+    max-width: 500px;
+    min-width: 320px;
+}
+
+.footer-right h3 {
+    font-size: 28px;
+    margin: 0 0 8px 0;
+    color: #1579a6;
+}
+
+.field-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.subscribe-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.subscribe-row input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #2c5d6b;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.subscribe-btn {
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid #2c5d6b;
+    color: #2c5d6b;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+    background: #2c5d6b;
+    color: #c1f2ff;
+}
+
+.subscribe-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(44, 93, 107, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    padding: 6px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover img { transform: scale(1.15); }
+
+.contact-info-line {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.copyright-small {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 25px;
+    opacity: 0.6;
+}
+
+@media (max-width: 850px) {
+    .footer-left { gap: 30px; margin-bottom: 30px; width: 100%; justify-content: center; }
+    .footer-right { max-width: 100%; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+}
 </style>
 </head>
 <body>
@@ -258,6 +404,8 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
     </div>
 </section>
 
+<div class="divider-line"></div>
+
 <section class="about reveal">
     <h2>About Us</h2>
     <div class="panels">
@@ -285,6 +433,8 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
     </div>
 </section>
 
+<div class="divider-line"></div>
+
 <section class="sponsors reveal">
     <h2>Our Incredible Sponsors</h2>
     <div class="sponsor-logos">
@@ -295,7 +445,51 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
     </div>
 </section>
 
-<footer>© 2026 Mystic Players Revival</footer>
+<footer>
+    <div class="footer-top">
+        <div class="footer-left">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Mystic Players Revival Logo">
+            </div>
+            <ul class="footer-quick-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="season.html">Season 26-27</a></li>
+                <li><a href="sponsor.html">Sponsors</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-right">
+            <h3>Subscribe for Updates</h3>
+            <label class="field-label">Email</label>
+            <div class="subscribe-row">
+                <input type="email" placeholder="your@email.com">
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+            
+            <p class="subscribe-desc">
+                By joining our mailing list, you'll be the first to know about upcoming auditions, ticket sales, and special community theater events in Medford.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="social-links">
+            <a href="#"><img src="facebook-icon.png" alt="FB"></a>
+            <a href="#"><img src="youtube-icon.png" alt="YT"></a>
+            <a href="#"><img src="instagram-icon.png" alt="IG"></a>
+            <a href="#"><img src="tiktok-icon.png" alt="TK"></a>
+        </div>
+        
+        <div class="contact-info-line">
+            Medford, MA 02155 // 781-799-4373 // mysticplayersrevival@gmail.com
+        </div>
+    </div>
+
+    <div class="copyright-small">
+        Registered 501(C)(3). © 2026 Mystic Players Revival. All Rights Reserved.
+    </div>
+</footer>
 
 <script>
     const observer = new IntersectionObserver((entries) => {
