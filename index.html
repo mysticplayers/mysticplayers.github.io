@@ -36,9 +36,7 @@ nav{
     transition: transform 0.3s ease;
 }
 
-.logo img:hover {
-    transform: scale(1.05);
-}
+.logo img:hover { transform: scale(1.05); }
 
 .nav-links{
     list-style:none;
@@ -48,15 +46,10 @@ nav{
     padding:0;
 }
 
-.nav-links li{
-    position:relative;
-}
-
 .nav-links a{
     text-decoration:none;
     color:#333;
     font-weight:500;
-    position: relative;
     padding: 10px 0;
     display: inline-block;
 }
@@ -88,8 +81,6 @@ nav{
 .dropdown a {
     display: block;
     padding: 10px 20px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .dropdown a:hover {
@@ -98,32 +89,34 @@ nav{
 }
 
 /* --- HERO SECTION --- */
-.hero{
-    position:relative;
-    height:80vh;
-    overflow:hidden;
-    background: #222;
+.hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    background: #000; /* Black background for cleaner transitions */
 }
 
-/* FIXED SLIDESHOW MATH:
-   10 photos * 3 seconds each = 30s total duration.
-   Fade in at 0%, Solid until 8%, Fade out by 10% (which is exactly 3 seconds).
-*/
 [class^="slide"] {
-    position:absolute;
-    width:100%;
-    height:100%;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    animation: slideShowZoomOut 30s infinite linear; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    /* 30s total cycle (3s per image) */
+    animation: crossFade 30s infinite ease-in-out;
 }
 
-@keyframes slideShowZoomOut {
-    0% { opacity: 0; transform: scale(1.1); }
-    2% { opacity: 1; }  /* Fast Fade In */
-    8% { opacity: 1; }  /* Stay Visible */
-    10% { opacity: 0; transform: scale(1); } /* Fast Fade Out */
+/* CROSSFADE LOGIC:
+   10 images. Each gets 10% of the timeline (3s).
+   To crossfade, we stay at 100% opacity until the NEXT image 
+   has finished its fade-in.
+*/
+@keyframes crossFade {
+    0%   { opacity: 0; transform: scale(1.1); }
+    2%   { opacity: 1; } /* Fade in quickly */
+    10%  { opacity: 1; } /* Stay solid until the 3s mark */
+    14%  { opacity: 0; transform: scale(1); } /* Fade out while next image is already visible */
     100% { opacity: 0; }
 }
 
@@ -138,17 +131,17 @@ nav{
 .slide9{ background-image:url("slide9.jpg"); animation-delay: 24s; }
 .slide10{ background-image:url("slide10.jpg"); animation-delay: 27s; }
 
-/* --- HERO TEXT ANIMATIONS --- */
-.hero-text{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    color:white;
+/* --- HERO TEXT --- */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
     z-index: 10;
-    pointer-events: none; /* Prevents text from blocking clicks */
+    pointer-events: none;
 }
 
 .hero-text h2 {
@@ -156,7 +149,6 @@ nav{
     font-size: 52px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 2px;
     opacity: 0;
     animation: wordPop 0.8s forwards ease-out;
 }
@@ -168,20 +160,11 @@ nav{
     animation: wordPop 0.6s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.hero-text p {
-    opacity: 0;
-    animation: fadeInUp 0.8s forwards ease-out 1.5s;
-}
-
 @keyframes wordPop {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
+/* Staggered text delays */
 .hero-text h1 span:nth-child(1) { animation-delay: 0.4s; }
 .hero-text h1 span:nth-child(2) { animation-delay: 0.6s; }
 .hero-text h1 span:nth-child(3) { animation-delay: 0.8s; }
@@ -189,55 +172,32 @@ nav{
 .hero-text h1 span:nth-child(5) { animation-delay: 1.2s; }
 .hero-text h1 span:nth-child(6) { animation-delay: 1.4s; }
 
-/* --- ABOUT SECTION & PANELS --- */
+.hero-text p {
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards ease-out 1.5s;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- SECTIONS --- */
 .about{ padding:70px 10%; text-align:center; }
 .panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-
 .panel{
-    background: white; 
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 10px 20px rgba(28, 158, 217, 0.15); 
-    border: 1px solid rgba(28, 158, 217, 0.05);
-    display: block;
+    background: white; border-radius: 15px; overflow: hidden;
+    transition: 0.4s; text-decoration: none; color: #333;
+    box-shadow: 0 10px 20px rgba(28, 158, 217, 0.15); display: block;
 }
-
-.panel:hover{
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(28, 158, 217, 0.3);
-}
-
+.panel:hover{ transform: translateY(-12px); box-shadow: 0 15px 30px rgba(28, 158, 217, 0.3); }
 .panel-content{ padding: 25px; }
+.panel-content h3{ color: #1c9ed9; }
 
-.panel-content h3{
-    margin-top: 0;
-    font-size: 24px; 
-    color: #1c9ed9; 
-    font-weight: 600;
-}
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-.panel-content p {
-    line-height: 1.5;
-    color: #555;
-}
-
-/* --- SCROLL REVEAL --- */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.sponsors{ padding:60px 10%; background:white; text-align:center; }
+.sponsors{ padding:60px 10%; text-align:center; }
 .sponsor-logos{ display:flex; flex-wrap:wrap; justify-content:center; gap:40px; }
 .sponsor-logos img{ height:60px; filter: grayscale(100%); opacity:0.6; transition: 0.4s; }
 .sponsor-logos img:hover{ filter: grayscale(0%); opacity:1; transform: scale(1.1); }
@@ -305,7 +265,7 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
             <img src="mission.png" style="width:100%; height:200px; object-fit:contain; background:#fff;" alt="Our Mission">
             <div class="panel-content">
                 <h3>Our Mission</h3>
-                <p>At Mystic Players Revival, our mission is to bring the magic of live theater back to Medford, MA by reviving dreams, one performance at a time. We believe theater has the power to inspire, entertain, and connect people.</p>
+                <p>Bringing the magic of live theater back to Medford, MA by reviving dreams, one performance at a time.</p>
             </div>
         </a>
         <a href="season.html" class="panel">
@@ -319,7 +279,7 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
             <img src="involved.png" style="width:100%; height:200px; object-fit:cover;" alt="Get Involved">
             <div class="panel-content">
                 <h3>Get Involved</h3>
-                <p>Mystic Players Revival thrives because of the people who share their time, talent, and support. Whether you’re performing or volunteering, there’s a place for you.</p>
+                <p>Whether performing or volunteering, there’s a place for you in our theater family.</p>
             </div>
         </a>
     </div>
