@@ -11,7 +11,7 @@
             margin: 0;
             line-height: 1.6;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #ffffff; /* Changed to pure white */
         }
 
         /* --- YOUR NAVIGATION CSS --- */
@@ -54,6 +54,7 @@
             display: inline-block;
         }
 
+        /* --- DROPDOWN MENU --- */
         .dropdown {
             list-style: none;
             display: none;
@@ -92,10 +93,11 @@
 
         /* --- ABOUT PAGE CONTENT STYLES --- */
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('stage-lights.jpg'); /* Replace with your image */
+            /* Background photo updated here */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503095396549-807a8bc3667c?q=80&w=2071&auto=format&fit=crop'); 
             background-size: cover;
             background-position: center;
-            height: 300px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -103,33 +105,129 @@
             text-align: center;
         }
 
-        .hero-section h1 { font-size: 3rem; margin: 0; }
+        .hero-section h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
 
         .container {
-            max-width: 1000px;
-            margin: 50px auto;
+            max-width: 1100px;
+            margin: 0 auto;
             padding: 0 20px;
+        }
+
+        .passion-section {
+            padding: 80px 0;
+            background: white; /* Removed greyish box */
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 50px;
             align-items: center;
         }
 
-        .about-text h2 { color: #1c9ed9; }
+        .about-text h2 { 
+            color: #1c9ed9; 
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
 
         .about-image img {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
-            nav { padding: 10px 20px; }
-            .nav-links { display: none; } /* Consider adding a mobile menu icon here later */
+        /* --- TEAM SECTION STYLES --- */
+        .team-section {
+            background-color: #ffffff; /* Removed greyish box */
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .team-title {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1c9ed9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .team-name {
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+        }
+
+        .team-bio {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .team-quote {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #555;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #ffffff; /* Removed greyish/dark box */
+            color: #777;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 850px) {
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -137,7 +235,7 @@
 
 <nav>
     <div class="logo">
-        <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        <a href="#"><img src="logo.png" alt="Logo"></a>
     </div>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -169,18 +267,73 @@
     <h1>Our Story</h1>
 </section>
 
-<div class="container">
-    <div class="about-grid">
-        <div class="about-text">
-            <h2>Passion for Performance</h2>
-            <p>Welcome to our theatre. Since our founding, we have been dedicated to bringing thought-provoking, high-quality productions to our community. Our mission is to provide a platform for local talent and to create experiences that resonate long after the final curtain call.</p>
-            <p>Whether you're a lifelong patron of the arts or attending your first show, we invite you to join us for our upcoming 2026-2027 season.</p>
-        </div>
-        <div class="about-image">
-            <img src="theatre-interior.jpg" alt="Interior of our theatre">
+<section class="passion-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>Passion for Performance</h2>
+                <p>Welcome to our theatre. Since our founding, we have been dedicated to bringing thought-provoking, high-quality productions to our community. Our mission is to provide a platform for local talent and to create experiences that resonate long after the final curtain call.</p>
+                <p>Whether you're a lifelong patron of the arts or attending your first show, we invite you to join us for our upcoming 2026-2027 season. We believe in the power of live performance to transform, educate, and inspire.</p>
+            </div>
+            <div class="about-image">
+                <img src="theatre-interior.jpg" alt="Interior of our theatre">
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <h2 class="section-title">Our Team</h2>
+        <div class="team-grid">
+            
+            <div class="team-card">
+                <img src="team1.jpg" alt="Jane Doe" class="team-photo">
+                <div class="team-info">
+                    <span class="team-title">Artistic Director</span>
+                    <h3 class="team-name">Jane Doe</h3>
+                    <p class="team-bio">With over 20 years in professional theatre, Jane oversees the creative vision of every production at our playhouse.</p>
+                    <p class="team-quote">"Theatre is the mirror where we truly see ourselves."</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="team2.jpg" alt="John Smith" class="team-photo">
+                <div class="team-info">
+                    <span class="team-title">Technical Director</span>
+                    <h3 class="team-name">John Smith</h3>
+                    <p class="team-bio">John is the wizard behind the curtain, managing everything from complex lighting rigs to intricate set designs.</p>
+                    <p class="team-quote">"If the magic feels real, I've done my job right."</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="team3.jpg" alt="Emily Chen" class="team-photo">
+                <div class="team-info">
+                    <span class="team-title">Managing Director</span>
+                    <h3 class="team-name">Emily Chen</h3>
+                    <p class="team-bio">Emily ensures the theatre runs smoothly behind the scenes, handling everything from grants to seasonal operations.</p>
+                    <p class="team-quote">"Community is the heart of every great performance."</p>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <img src="team4.jpg" alt="Marcus Bell" class="team-photo">
+                <div class="team-info">
+                    <span class="team-title">Lead Choreographer</span>
+                    <h3 class="team-name">Marcus Bell</h3>
+                    <p class="team-bio">A former Broadway performer, Marcus brings movement and energy to our stage with stunning choreography.</p>
+                    <p class="team-quote">"Movement tells the stories that words cannot reach."</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Theatre Company. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
