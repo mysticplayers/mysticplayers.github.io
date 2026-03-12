@@ -9,20 +9,19 @@
     <style>
         /* --- GLOBAL STYLES --- */
         body {
-            font-family: 'Fredoka', sans-serif; /* Applied Fredoka here */
+            font-family: 'Fredoka', sans-serif;
             margin: 0;
             line-height: 1.6;
             color: #333;
             background-color: #ffffff; 
         }
 
-        /* Ensuring headers use the font and look clean */
         h1, h2, h3 {
             font-family: 'Fredoka', sans-serif;
             font-weight: 600;
         }
 
-        /* --- YOUR NAVIGATION CSS --- */
+        /* --- NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -62,7 +61,6 @@
             display: inline-block;
         }
 
-        /* --- DROPDOWN MENU --- */
         .dropdown {
             list-style: none;
             display: none;
@@ -221,20 +219,169 @@
             margin-top: auto;
         }
 
-        /* --- FOOTER --- */
+        /* --- INTEGRATED FOOTER CSS --- */
         footer {
-            background: #ffffff; 
-            color: #777;
+            background: #c1f2ff;
+            padding: 60px 5% 30px 5%;
+            color: #2c5d6b;
+            border-top: 2px solid #abe2f0;
+            margin-top: 0; /* Removed margin to sit flush */
+            text-align: left; /* Reset from About Us center align */
+        }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        .footer-left {
+            display: flex;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 110px;
+            width: auto;
+        }
+
+        .footer-quick-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .footer-quick-links li {
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .footer-quick-links a {
+            text-decoration: none;
+            color: #2c5d6b;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-quick-links a::before {
+            content: "→";
+            margin-right: 10px;
+            color: #2c5d6b;
+            font-weight: bold;
+        }
+
+        .footer-right {
+            flex: 1;
+            max-width: 500px;
+            min-width: 320px;
+        }
+
+        .footer-right h3 {
+            font-size: 28px;
+            margin: 0 0 8px 0;
+            color: #1579a6;
+        }
+
+        .field-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .subscribe-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .subscribe-row input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #2c5d6b;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 2px;
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        .subscribe-btn {
+            padding: 10px 25px;
+            background: transparent;
+            border: 2px solid #2c5d6b;
+            color: #2c5d6b;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .subscribe-btn:hover {
+            background: #2c5d6b;
+            color: #c1f2ff;
+        }
+
+        .subscribe-desc {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(44, 93, 107, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links img {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            padding: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover img { transform: scale(1.15); }
+
+        .contact-info-line {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .copyright-small {
+            width: 100%;
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #eee;
-            margin-top: 40px;
+            font-size: 12px;
+            margin-top: 25px;
+            opacity: 0.6;
         }
 
         /* --- RESPONSIVENESS --- */
         @media (max-width: 850px) {
             .about-grid { grid-template-columns: 1fr; text-align: center; }
             .nav-links { display: none; }
+            .footer-left { gap: 30px; margin-bottom: 30px; width: 100%; justify-content: center; }
+            .footer-right { max-width: 100%; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -242,7 +389,7 @@
 
 <nav>
     <div class="logo">
-        <a href="#"><img src="logo.png" alt="Logo"></a>
+        <a href="index.html"><img src="logo.png" alt="Logo"></a>
     </div>
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -280,11 +427,10 @@
             <div class="about-text">
                 <h2>Our Story</h2>
                 <p>Our company was born out of a shared love for theater and a chance meeting in a Facebook group. In 2023, Margaret—a lifelong theater lover who had spent years on stage and behind the scenes created “Bring Community Theater Back to Medford, MA.” She didn’t know exactly what would come of it, only that she missed the magic of live performance in her hometown and hoped others did too.
-That group brought together the four of us! all Medford residents who care deeply about our community. Danielle and Robert, both theater professors at colleges in the city, saw the post and immediately connected with the vision. Jim, a scientist with a lifelong love for the arts, joined too, bringing fresh eyes and boundless enthusiasm. Soon we were meeting in the little conference rooms at Margaret’s apartment building, sharing ideas, swapping stories, and discovering that we had more than just theater in common we were building a genuine friendship.</p>
+                That group brought together the four of us! all Medford residents who care deeply about our community. Danielle and Robert, both theater professors at colleges in the city, saw the post and immediately connected with the vision. Jim, a scientist with a lifelong love for the arts, joined too, bringing fresh eyes and boundless enthusiasm. Soon we were meeting in the little conference rooms at Margaret’s apartment building, sharing ideas, swapping stories, and discovering that we had more than just theater in common we were building a genuine friendship.</p>
 
-<p>What started as conversations about shows and stages quickly grew into late-night laughter, shared meals, and a bond that feels more like family than a board. Each of us brings something different to the table but what ties it all together is the joy we find in working side by side.
-We didn’t just create a theater company. we found each other. And together, as neighbors, friends, and artists, we’re committed to bringing theater back to Medford in a way that celebrates both the art form we love and the friendships that make it possible.</p>
-                
+                <p>What started as conversations about shows and stages quickly grew into late-night laughter, shared meals, and a bond that feels more like family than a board. Each of us brings something different to the table but what ties it all together is the joy we find in working side by side.
+                We didn’t just create a theater company. we found each other. And together, as neighbors, friends, and artists, we’re committed to bringing theater back to Medford in a way that celebrates both the art form we love and the friendships that make it possible.</p>
             </div>
             <div class="about-image">
                 <img src="theatre-interior.jpg" alt="Interior of our theatre">
@@ -297,7 +443,6 @@ We didn’t just create a theater company. we found each other. And together, as
     <div class="container">
         <h2 class="section-title">Our Team</h2>
         <div class="team-grid">
-            
             <div class="team-card">
                 <img src="team1.jpg" alt="Margaret Petrella" class="team-photo">
                 <div class="team-info">
@@ -337,14 +482,67 @@ We didn’t just create a theater company. we found each other. And together, as
                     <p class="team-quote">"I am the very model of a modern major treasurer"</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Mystic Players Revival. All Rights Reserved.</p>
+    <div class="footer-top">
+        <div class="footer-left">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Mystic Players Revival Logo">
+            </div>
+            <ul class="footer-quick-links">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="season.html">Season 26-27</a></li>
+                <li><a href="sponsor.html">Sponsors</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-right">
+            <h3>Subscribe for Updates</h3>
+            <label class="field-label">Email</label>
+            <div class="subscribe-row">
+                <input type="email" placeholder="your@email.com">
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+            
+            <p class="subscribe-desc">
+                By joining our mailing list, you'll be the first to know about upcoming auditions, ticket sales, and special community theater events in Medford.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="social-links">
+            <a href="#"><img src="facebook-icon.png" alt="FB"></a>
+            <a href="#"><img src="youtube-icon.png" alt="YT"></a>
+            <a href="#"><img src="instagram-icon.png" alt="IG"></a>
+            <a href="#"><img src="tiktok-icon.png" alt="TK"></a>
+        </div>
+        
+        <div class="contact-info-line">
+            Medford, MA 02155 // 781-799-4373 // mysticplayersrevival@gmail.com
+        </div>
+    </div>
+
+    <div class="copyright-small">
+        Registered 501(C)(3). © 2026 Mystic Players Revival. All Rights Reserved.
+    </div>
 </footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
