@@ -45,7 +45,7 @@ nav{
 }
 
 .nav-links li{
-    position:relative; /* Required for the dropdown positioning */
+    position:relative;
 }
 
 .nav-links a{
@@ -61,7 +61,7 @@ nav{
 .dropdown {
     display: none;
     position: absolute;
-    top: 100%; /* Sits right below the nav link */
+    top: 100%;
     left: 0;
     background: white;
     border: 1px solid #eee;
@@ -75,7 +75,6 @@ nav{
     transition: all 0.3s ease;
 }
 
-/* Show dropdown on hover */
 .nav-links li:hover .dropdown {
     display: block;
     opacity: 1;
@@ -94,7 +93,7 @@ nav{
     color: #1c9ed9;
 }
 
-/* --- HERO SECTION WITH ZOOM-OUT --- */
+/* --- HERO SECTION --- */
 .hero{
     position:relative;
     height:80vh;
@@ -147,6 +146,43 @@ nav{
     to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
+/* --- ABOUT SECTION & PANELS --- */
+.about{ padding:70px 10%; text-align:center; }
+.panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+
+.panel{
+    background: white; /* Changed to white */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+    /* Blue shadow added here */
+    box-shadow: 0 10px 20px rgba(28, 158, 217, 0.15); 
+    border: 1px solid rgba(28, 158, 217, 0.05);
+}
+
+.panel:hover{
+    transform: translateY(-12px) scale(1.02);
+    /* Stronger blue shadow on hover */
+    box-shadow: 0 15px 30px rgba(28, 158, 217, 0.3);
+}
+
+.panel-content{ padding: 25px; }
+
+.panel-content h3{
+    margin-top: 0;
+    font-size: 24px; /* Bigger text */
+    color: #1c9ed9; /* Blue text */
+    font-weight: 600;
+}
+
+.panel-content p {
+    line-height: 1.5;
+    color: #555;
+}
+
 /* --- SCROLL REVEAL --- */
 .reveal {
     opacity: 0;
@@ -157,24 +193,6 @@ nav{
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
-}
-
-.about{ padding:70px 10%; text-align:center; }
-.panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-
-.panel{
-    background:#c1f2ff;
-    border-radius:15px;
-    overflow:hidden;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-    cursor:pointer;
-    text-decoration:none;
-    color:#333;
-}
-
-.panel:hover{
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .sponsors{ padding:60px 10%; background:white; text-align:center; }
@@ -193,7 +211,6 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
     </div>
     <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        
         <li>
             <a href="#">About Us</a>
             <div class="dropdown">
@@ -201,7 +218,6 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
                 <a href="past-productions.html">Past Productions</a>
             </div>
         </li>
-
         <li>
             <a href="#">Season 2026-2027</a>
             <div class="dropdown">
@@ -211,7 +227,6 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
                 <a href="sponsor.html">Sponsor A Season</a>
             </div>
         </li>
-
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
@@ -230,23 +245,23 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
     <div class="panels">
         <a href="mission.html" class="panel">
             <img src="mission.jpg" style="width:100%; height:200px; object-fit:cover;">
-            <div style="padding:20px;">
+            <div class="panel-content">
                 <h3>Our Mission</h3>
-                <p>At Mystic Players Revival, our mission is to bring the magic of live theater back to Medford, MA by reviving dreams, one performance at a time. We believe theater has the power to inspire, entertain, and connect people. Through a mix of classic works, bold new productions, and community events, we strive to create a welcoming space where artists and audiences come together to celebrate the transformative spirit of the stage.</p>
+                <p>Discover our commitment to reviving theatre and creating community opportunities.</p>
             </div>
         </a>
         <a href="season.html" class="panel">
             <img src="season.jpg" style="width:100%; height:200px; object-fit:cover;">
-            <div style="padding:20px;">
+            <div class="panel-content">
                 <h3>Upcoming Season</h3>
-                <p>Stay Tuned for 2026-2027 Season Announcements</p>
+                <p>Explore our exciting 2026-2027 lineup of productions and performances.</p>
             </div>
         </a>
         <a href="get-involved.html" class="panel">
             <img src="involved.jpg" style="width:100%; height:200px; object-fit:cover;">
-            <div style="padding:20px;">
+            <div class="panel-content">
                 <h3>Get Involved</h3>
-                <p>Mystic Players Revival thrives because of the people who share their time, talent, and support. Whether you’re performing, volunteering, or helping behind the scenes, there’s a place for you in our theater family. By getting involved, you help us bring bold productions and meaningful opportunities to Medford—keeping the spirit of live theater alive for artists and audiences alike.</p>
+                <p>Audition, volunteer, or donate and help bring theatre back to life.</p>
             </div>
         </a>
     </div>
