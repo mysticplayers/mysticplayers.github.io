@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Theatre Company</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* --- YOUR NAVIGATION CSS --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover { transform: scale(1.05); }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li { position: relative; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 15px 0;
+            display: inline-block;
+        }
+
+        .dropdown {
+            list-style: none;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: white;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
+            border-radius: 8px;
+            padding: 10px 0;
+            margin: 0;
+            z-index: 100;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li:hover .dropdown {
+            display: block;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        .dropdown a:hover {
+            background-color: #f0faff;
+            color: #1c9ed9;
+        }
+
+        /* --- ABOUT PAGE CONTENT STYLES --- */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('stage-lights.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-section h1 { font-size: 3rem; margin: 0; }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h2 { color: #1c9ed9; }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            nav { padding: 10px 20px; }
+            .nav-links { display: none; } /* Consider adding a mobile menu icon here later */
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Logo"></a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li>
+            <a href="about.html">About Us</a>
+            <ul class="dropdown">
+                <li><a href="history.html">Our History</a></li>
+                <li><a href="past-productions.html">Past Productions</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Season 2026-2027</a>
+            <ul class="dropdown">
+                <li><a href="auditions.html">Auditions</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+                <li><a href="sponsor.html">Sponsor A Season</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="contact.html">Contact</a>
+            <ul class="dropdown">
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<section class="hero-section">
+    <h1>Our Story</h1>
+</section>
+
+<div class="container">
+    <div class="about-grid">
+        <div class="about-text">
+            <h2>Passion for Performance</h2>
+            <p>Welcome to our theatre. Since our founding, we have been dedicated to bringing thought-provoking, high-quality productions to our community. Our mission is to provide a platform for local talent and to create experiences that resonate long after the final curtain call.</p>
+            <p>Whether you're a lifelong patron of the arts or attending your first show, we invite you to join us for our upcoming 2026-2027 season.</p>
+        </div>
+        <div class="about-image">
+            <img src="theatre-interior.jpg" alt="Interior of our theatre">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
