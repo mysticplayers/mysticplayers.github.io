@@ -36,8 +36,6 @@ nav{
     transition: transform 0.3s ease;
 }
 
-.logo img:hover { transform: scale(1.05); }
-
 .nav-links{
     list-style:none;
     display:flex;
@@ -46,28 +44,57 @@ nav{
     padding:0;
 }
 
+.nav-links li{
+    position:relative; /* Required for the dropdown positioning */
+}
+
 .nav-links a{
     text-decoration:none;
     color:#333;
     font-weight:500;
     position: relative;
-    padding-bottom: 5px;
+    padding: 10px 0;
+    display: inline-block;
 }
 
-.nav-links a::after {
-    content: '';
+/* --- DROPDOWN MENU --- */
+.dropdown {
+    display: none;
     position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
+    top: 100%; /* Sits right below the nav link */
     left: 0;
-    background-color: #1c9ed9;
-    transition: width 0.3s ease;
+    background: white;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-width: 200px;
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
 }
 
-.nav-links a:hover::after { width: 100%; }
+/* Show dropdown on hover */
+.nav-links li:hover .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
 
-/* --- HERO SECTION WITH ZOOM-OUT EFFECT --- */
+.dropdown a {
+    display: block;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown a:hover {
+    background-color: #f0faff;
+    color: #1c9ed9;
+}
+
+/* --- HERO SECTION WITH ZOOM-OUT --- */
 .hero{
     position:relative;
     height:80vh;
@@ -82,29 +109,15 @@ nav{
     background-size:cover;
     background-position:center;
     opacity:0;
-    /* Animation updated for 8 slides */
     animation: slideShowZoomOut 32s infinite linear; 
 }
 
-/* Updated Ken Burns: Zooming OUT */
 @keyframes slideShowZoomOut {
-    0% { 
-        opacity: 0; 
-        transform: scale(1.15); /* Start slightly larger */
-    }
-    5% { 
-        opacity: 1; 
-    }
-    12% { 
-        opacity: 1; 
-    }
-    17% { 
-        opacity: 0; 
-        transform: scale(1); /* Shrink back to normal size */
-    }
-    100% { 
-        opacity: 0; 
-    }
+    0% { opacity: 0; transform: scale(1.15); }
+    5% { opacity: 1; }
+    12% { opacity: 1; }
+    17% { opacity: 0; transform: scale(1); }
+    100% { opacity: 0; }
 }
 
 .slide1{ background-image:url("slide1.jpg"); animation-delay: 0s; }
@@ -120,16 +133,17 @@ nav{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%,-40%);
+    transform:translate(-50%,-50%);
     text-align:center;
     color:white;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
     z-index: 10;
-    opacity: 0;
     animation: fadeInUp 1.2s forwards ease-out 0.5s;
+    opacity: 0;
 }
 
 @keyframes fadeInUp {
+    from { opacity: 0; transform: translate(-50%, -40%); }
     to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
@@ -145,7 +159,6 @@ nav{
     transform: translateY(0);
 }
 
-/* --- ABOUT PANELS --- */
 .about{ padding:70px 10%; text-align:center; }
 .panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
 
@@ -164,14 +177,12 @@ nav{
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* --- SPONSORS --- */
 .sponsors{ padding:60px 10%; background:white; text-align:center; }
 .sponsor-logos{ display:flex; flex-wrap:wrap; justify-content:center; gap:40px; }
 .sponsor-logos img{ height:60px; filter: grayscale(100%); opacity:0.6; transition: 0.4s; }
 .sponsor-logos img:hover{ filter: grayscale(0%); opacity:1; transform: scale(1.1); }
 
 footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
-
 </style>
 </head>
 <body>
@@ -182,8 +193,25 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
     </div>
     <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Season 2026-2027</a></li>
+        
+        <li>
+            <a href="#">About Us</a>
+            <div class="dropdown">
+                <a href="history.html">Our History</a>
+                <a href="past-productions.html">Past Productions</a>
+            </div>
+        </li>
+
+        <li>
+            <a href="#">Season 2026-2027</a>
+            <div class="dropdown">
+                <a href="auditions.html">Auditions</a>
+                <a href="tickets.html">Tickets</a>
+                <a href="donate.html">Donate</a>
+                <a href="sponsor.html">Sponsor A Season</a>
+            </div>
+        </li>
+
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
