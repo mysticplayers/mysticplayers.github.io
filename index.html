@@ -128,6 +128,7 @@ nav{
 .slide7{ background-image:url("slide7.jpg"); animation-delay: 24s; }
 .slide8{ background-image:url("slide8.jpg"); animation-delay: 28s; }
 
+/* --- NEW LETTERING ANIMATION --- */
 .hero-text{
     position:absolute;
     top:50%;
@@ -137,14 +138,36 @@ nav{
     color:white;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
     z-index: 10;
-    animation: fadeInUp 1.2s forwards ease-out 0.5s;
+}
+
+.hero-text h1 span {
+    display: inline-block;
     opacity: 0;
+    transform: translateY(20px);
+    animation: wordPop 0.6s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-text p {
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards ease-out 1.5s;
+}
+
+@keyframes wordPop {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translate(-50%, -40%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+
+/* Staggering the words */
+.hero-text h1 span:nth-child(1) { animation-delay: 0.2s; }
+.hero-text h1 span:nth-child(2) { animation-delay: 0.4s; }
+.hero-text h1 span:nth-child(3) { animation-delay: 0.6s; }
+.hero-text h1 span:nth-child(4) { animation-delay: 0.8s; }
+.hero-text h1 span:nth-child(5) { animation-delay: 1.0s; }
+.hero-text h1 span:nth-child(6) { animation-delay: 1.2s; }
 
 /* --- ABOUT SECTION & PANELS --- */
 .about{ padding:70px 10%; text-align:center; }
@@ -236,8 +259,11 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
 <section class="hero">
     <div class="slide1"></div><div class="slide2"></div><div class="slide3"></div><div class="slide4"></div>
     <div class="slide5"></div><div class="slide6"></div><div class="slide7"></div><div class="slide8"></div>
+    
     <div class="hero-text">
-        <h1>Reviving Dreams, One Performance At A Time</h1>
+        <h1>
+            <span>Reviving</span> <span>Dreams,</span> <span>One</span> <span>Performance</span> <span>At</span> <span>A Time</span>
+        </h1>
         <p>Medford, Massachusetts</p>
     </div>
 </section>
@@ -253,14 +279,14 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
             </div>
         </a>
         <a href="season.html" class="panel">
-            <img src="season.png" style="width:100%; height:200px; object-fit:cover;" alt="Upcoming Season">
+            <img src="season.jpg" style="width:100%; height:200px; object-fit:cover;" alt="Upcoming Season">
             <div class="panel-content">
                 <h3>Upcoming Season</h3>
                 <p>Explore our exciting 2026-2027 lineup of productions and performances.</p>
             </div>
         </a>
         <a href="get-involved.html" class="panel">
-            <img src="involved.png" style="width:100%; height:200px; object-fit:cover;" alt="Get Involved">
+            <img src="involved.jpg" style="width:100%; height:200px; object-fit:cover;" alt="Get Involved">
             <div class="panel-content">
                 <h3>Get Involved</h3>
                 <p>Audition, volunteer, or donate and help bring theatre back to life.</p>
@@ -295,3 +321,6 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
 
 </body>
 </html>
+
+
+              
