@@ -16,7 +16,7 @@ body{
     overflow-x: hidden;
 }
 
-/* --- NAVIGATION & HOVER EFFECTS --- */
+/* --- NAVIGATION --- */
 nav{
     display:flex;
     justify-content:space-between;
@@ -54,7 +54,6 @@ nav{
     padding-bottom: 5px;
 }
 
-/* Sliding Underline Animation */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -68,7 +67,7 @@ nav{
 
 .nav-links a:hover::after { width: 100%; }
 
-/* --- HERO SECTION WITH KEN BURNS EFFECT --- */
+/* --- HERO SECTION WITH ZOOM-OUT EFFECT --- */
 .hero{
     position:relative;
     height:80vh;
@@ -83,19 +82,31 @@ nav{
     background-size:cover;
     background-position:center;
     opacity:0;
-    animation: slideShow 32s infinite linear; /* Slower for 8 slides */
+    /* Animation updated for 8 slides */
+    animation: slideShowZoomOut 32s infinite linear; 
 }
 
-/* Background Zoom Animation */
-@keyframes slideShow {
-    0% { opacity: 0; transform: scale(1); }
-    5% { opacity: 1; }
-    12% { opacity: 1; }
-    17% { opacity: 0; transform: scale(1.1); }
-    100% { opacity: 0; }
+/* Updated Ken Burns: Zooming OUT */
+@keyframes slideShowZoomOut {
+    0% { 
+        opacity: 0; 
+        transform: scale(1.15); /* Start slightly larger */
+    }
+    5% { 
+        opacity: 1; 
+    }
+    12% { 
+        opacity: 1; 
+    }
+    17% { 
+        opacity: 0; 
+        transform: scale(1); /* Shrink back to normal size */
+    }
+    100% { 
+        opacity: 0; 
+    }
 }
 
-/* Setup for 8 slides (4s intervals) */
 .slide1{ background-image:url("slide1.jpg"); animation-delay: 0s; }
 .slide2{ background-image:url("slide2.jpg"); animation-delay: 4s; }
 .slide3{ background-image:url("slide3.jpg"); animation-delay: 8s; }
@@ -109,7 +120,7 @@ nav{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%,-40%); /* Starts slightly lower */
+    transform:translate(-50%,-40%);
     text-align:center;
     color:white;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
@@ -122,7 +133,7 @@ nav{
     to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* --- SCROLL REVEAL CLASSES --- */
+/* --- SCROLL REVEAL --- */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
