@@ -151,21 +151,19 @@ nav{
 .panels{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
 
 .panel{
-    background: white; /* Changed to white */
+    background: white; 
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
     cursor: pointer;
     text-decoration: none;
     color: #333;
-    /* Blue shadow added here */
     box-shadow: 0 10px 20px rgba(28, 158, 217, 0.15); 
     border: 1px solid rgba(28, 158, 217, 0.05);
 }
 
 .panel:hover{
     transform: translateY(-12px) scale(1.02);
-    /* Stronger blue shadow on hover */
     box-shadow: 0 15px 30px rgba(28, 158, 217, 0.3);
 }
 
@@ -173,8 +171,8 @@ nav{
 
 .panel-content h3{
     margin-top: 0;
-    font-size: 24px; /* Bigger text */
-    color: #1c9ed9; /* Blue text */
+    font-size: 24px; 
+    color: #1c9ed9; 
     font-weight: 600;
 }
 
@@ -223,11 +221,15 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
             <div class="dropdown">
                 <a href="auditions.html">Auditions</a>
                 <a href="tickets.html">Tickets</a>
-                <a href="donate.html">Donate</a>
                 <a href="sponsor.html">Sponsor A Season</a>
             </div>
         </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li>
+            <a href="contact.html">Contact</a>
+            <div class="dropdown">
+                <a href="donate.html">Donate</a>
+            </div>
+        </li>
     </ul>
 </nav>
 
@@ -244,21 +246,21 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
     <h2>About Us</h2>
     <div class="panels">
         <a href="mission.html" class="panel">
-            <img src="mission.jpg" style="width:100%; height:200px; object-fit:cover;">
+            <img src="mission.jpg" style="width:100%; height:200px; object-fit:cover;" alt="Our Mission">
             <div class="panel-content">
                 <h3>Our Mission</h3>
                 <p>Discover our commitment to reviving theatre and creating community opportunities.</p>
             </div>
         </a>
         <a href="season.html" class="panel">
-            <img src="season.jpg" style="width:100%; height:200px; object-fit:cover;">
+            <img src="season.jpg" style="width:100%; height:200px; object-fit:cover;" alt="Upcoming Season">
             <div class="panel-content">
                 <h3>Upcoming Season</h3>
                 <p>Explore our exciting 2026-2027 lineup of productions and performances.</p>
             </div>
         </a>
         <a href="get-involved.html" class="panel">
-            <img src="involved.jpg" style="width:100%; height:200px; object-fit:cover;">
+            <img src="involved.jpg" style="width:100%; height:200px; object-fit:cover;" alt="Get Involved">
             <div class="panel-content">
                 <h3>Get Involved</h3>
                 <p>Audition, volunteer, or donate and help bring theatre back to life.</p>
@@ -270,8 +272,10 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
 <section class="sponsors reveal">
     <h2>Our Incredible Sponsors</h2>
     <div class="sponsor-logos">
-        <img src="sponsor1.png"><img src="sponsor2.png">
-        <img src="sponsor3.png"><img src="sponsor4.png">
+        <img src="sponsor1.png" alt="Sponsor 1">
+        <img src="sponsor2.png" alt="Sponsor 2">
+        <img src="sponsor3.png" alt="Sponsor 3">
+        <img src="sponsor4.png" alt="Sponsor 4">
     </div>
 </section>
 
