@@ -128,7 +128,7 @@ nav{
 .slide7{ background-image:url("slide7.jpg"); animation-delay: 24s; }
 .slide8{ background-image:url("slide8.jpg"); animation-delay: 28s; }
 
-/* --- NEW LETTERING ANIMATION --- */
+/* --- HERO TEXT ANIMATIONS --- */
 .hero-text{
     position:absolute;
     top:50%;
@@ -138,6 +138,17 @@ nav{
     color:white;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
     z-index: 10;
+}
+
+/* Big Blue Standing Out Text */
+.hero-text h2 {
+    color: #1c9ed9;
+    font-size: 52px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: wordPop 0.8s forwards ease-out;
 }
 
 .hero-text h1 span {
@@ -162,12 +173,12 @@ nav{
 }
 
 /* Staggering the words */
-.hero-text h1 span:nth-child(1) { animation-delay: 0.2s; }
-.hero-text h1 span:nth-child(2) { animation-delay: 0.4s; }
-.hero-text h1 span:nth-child(3) { animation-delay: 0.6s; }
-.hero-text h1 span:nth-child(4) { animation-delay: 0.8s; }
-.hero-text h1 span:nth-child(5) { animation-delay: 1.0s; }
-.hero-text h1 span:nth-child(6) { animation-delay: 1.2s; }
+.hero-text h1 span:nth-child(1) { animation-delay: 0.4s; }
+.hero-text h1 span:nth-child(2) { animation-delay: 0.6s; }
+.hero-text h1 span:nth-child(3) { animation-delay: 0.8s; }
+.hero-text h1 span:nth-child(4) { animation-delay: 1.0s; }
+.hero-text h1 span:nth-child(5) { animation-delay: 1.2s; }
+.hero-text h1 span:nth-child(6) { animation-delay: 1.4s; }
 
 /* --- ABOUT SECTION & PANELS --- */
 .about{ padding:70px 10%; text-align:center; }
@@ -261,6 +272,7 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
     <div class="slide5"></div><div class="slide6"></div><div class="slide7"></div><div class="slide8"></div>
     
     <div class="hero-text">
+        <h2>Mystic Players Revival</h2>
         <h1>
             <span>Reviving</span> <span>Dreams,</span> <span>One</span> <span>Performance</span> <span>At</span> <span>A Time</span>
         </h1>
@@ -321,6 +333,5 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
 
 </body>
 </html>
-
 
               
