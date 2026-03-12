@@ -36,6 +36,10 @@ nav{
     transition: transform 0.3s ease;
 }
 
+.logo img:hover {
+    transform: scale(1.05);
+}
+
 .nav-links{
     list-style:none;
     display:flex;
@@ -101,6 +105,10 @@ nav{
     background: #222;
 }
 
+/* FIXED SLIDESHOW MATH:
+   10 photos * 3 seconds each = 30s total duration.
+   Fade in at 0%, Solid until 8%, Fade out by 10% (which is exactly 3 seconds).
+*/
 [class^="slide"] {
     position:absolute;
     width:100%;
@@ -108,27 +116,27 @@ nav{
     background-size:cover;
     background-position:center;
     opacity:0;
-    animation: slideShowZoomOut 32s infinite linear; 
+    animation: slideShowZoomOut 30s infinite linear; 
 }
 
 @keyframes slideShowZoomOut {
-    0% { opacity: 0; transform: scale(1.15); }
-    5% { opacity: 1; }
-    12% { opacity: 1; }
-    17% { opacity: 0; transform: scale(1); }
+    0% { opacity: 0; transform: scale(1.1); }
+    2% { opacity: 1; }  /* Fast Fade In */
+    8% { opacity: 1; }  /* Stay Visible */
+    10% { opacity: 0; transform: scale(1); } /* Fast Fade Out */
     100% { opacity: 0; }
 }
 
 .slide1{ background-image:url("slide1.jpg"); animation-delay: 0s; }
-.slide2{ background-image:url("slide2.jpg"); animation-delay: 4s; }
-.slide3{ background-image:url("slide3.jpg"); animation-delay: 8s; }
-.slide4{ background-image:url("slide4.jpg"); animation-delay: 12s; }
-.slide5{ background-image:url("slide5.jpg"); animation-delay: 16s; }
-.slide6{ background-image:url("slide6.jpg"); animation-delay: 20s; }
-.slide7{ background-image:url("slide7.jpg"); animation-delay: 24s; }
-.slide8{ background-image:url("slide8.jpg"); animation-delay: 28s; }
-.slide9{ background-image:url("slide9.jpg"); animation-delay: 32s; }
-.slide10{ background-image:url("slide10.jpg"); animation-delay: 36s; }
+.slide2{ background-image:url("slide2.jpg"); animation-delay: 3s; }
+.slide3{ background-image:url("slide3.jpg"); animation-delay: 6s; }
+.slide4{ background-image:url("slide4.jpg"); animation-delay: 9s; }
+.slide5{ background-image:url("slide5.jpg"); animation-delay: 12s; }
+.slide6{ background-image:url("slide6.jpg"); animation-delay: 15s; }
+.slide7{ background-image:url("slide7.jpg"); animation-delay: 18s; }
+.slide8{ background-image:url("slide8.jpg"); animation-delay: 21s; }
+.slide9{ background-image:url("slide9.jpg"); animation-delay: 24s; }
+.slide10{ background-image:url("slide10.jpg"); animation-delay: 27s; }
 
 /* --- HERO TEXT ANIMATIONS --- */
 .hero-text{
@@ -140,9 +148,9 @@ nav{
     color:white;
     text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
     z-index: 10;
+    pointer-events: none; /* Prevents text from blocking clicks */
 }
 
-/* Big Blue Standing Out Text */
 .hero-text h2 {
     color: #1c9ed9;
     font-size: 52px;
@@ -174,7 +182,6 @@ nav{
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Staggering the words */
 .hero-text h1 span:nth-child(1) { animation-delay: 0.4s; }
 .hero-text h1 span:nth-child(2) { animation-delay: 0.6s; }
 .hero-text h1 span:nth-child(3) { animation-delay: 0.8s; }
@@ -196,6 +203,7 @@ nav{
     color: #333;
     box-shadow: 0 10px 20px rgba(28, 158, 217, 0.15); 
     border: 1px solid rgba(28, 158, 217, 0.05);
+    display: block;
 }
 
 .panel:hover{
@@ -270,8 +278,16 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
 </nav>
 
 <section class="hero">
-    <div class="slide1"></div><div class="slide2"></div><div class="slide3"></div><div class="slide4"></div>
-    <div class="slide5"></div><div class="slide6"></div><div class="slide7"></div><div class="slide8"></div><div class="slide9"></div><div class="slide10"></div>
+    <div class="slide1"></div>
+    <div class="slide2"></div>
+    <div class="slide3"></div>
+    <div class="slide4"></div>
+    <div class="slide5"></div>
+    <div class="slide6"></div>
+    <div class="slide7"></div>
+    <div class="slide8"></div>
+    <div class="slide9"></div>
+    <div class="slide10"></div>
     
     <div class="hero-text">
         <h2>Mystic Players Revival</h2>
@@ -289,7 +305,7 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
             <img src="mission.png" style="width:100%; height:200px; object-fit:contain; background:#fff;" alt="Our Mission">
             <div class="panel-content">
                 <h3>Our Mission</h3>
-                <p>At Mystic Players Revival, our mission is to bring the magic of live theater back to Medford, MA by reviving dreams, one performance at a time. We believe theater has the power to inspire, entertain, and connect people. Through a mix of classic works, bold new productions, and community events, we strive to create a welcoming space where artists and audiences come together to celebrate the transformative spirit of the stage.</p>
+                <p>At Mystic Players Revival, our mission is to bring the magic of live theater back to Medford, MA by reviving dreams, one performance at a time. We believe theater has the power to inspire, entertain, and connect people.</p>
             </div>
         </a>
         <a href="season.html" class="panel">
@@ -303,7 +319,7 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
             <img src="involved.png" style="width:100%; height:200px; object-fit:cover;" alt="Get Involved">
             <div class="panel-content">
                 <h3>Get Involved</h3>
-                <p>Mystic Players Revival thrives because of the people who share their time, talent, and support. Whether you’re performing, volunteering, or helping behind the scenes, there’s a place for you in our theater family. By getting involved, you help us bring bold productions and meaningful opportunities to Medford—keeping the spirit of live theater alive for artists and audiences alike..</p>
+                <p>Mystic Players Revival thrives because of the people who share their time, talent, and support. Whether you’re performing or volunteering, there’s a place for you.</p>
             </div>
         </a>
     </div>
@@ -335,5 +351,3 @@ footer{ text-align:center; padding:40px; font-size:14px; color:#777; }
 
 </body>
 </html>
-
-              
