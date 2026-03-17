@@ -143,15 +143,6 @@ nav {
     width: 90%;
 }
 
-.hero-text h2 {
-    color: #1c9ed9;
-    font-size: 52px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    opacity: 0;
-    animation: wordPop 0.8s forwards ease-out;
-}
-
 .hero-text h1 span {
     display: inline-block;
     opacity: 0;
@@ -166,10 +157,70 @@ nav {
 /* --- SECTION DIVIDERS --- */
 .divider-line {
     height: 8px;
-    background-color: #c1f2ff; /* Your signature blue */
+    background-color: #c1f2ff;
     width: 100%;
 }
 
+/* --- SINGLE PHOTO SCRAPBOOK SECTION --- */
+.scrapbook-section {
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    background-color: #fff; /* Removed any grey backgrounds here */
+    flex-wrap: wrap;
+}
+
+.scrapbook-image-container {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.scrapbook-photo {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background: white; /* Clean white polaroid frame */
+    padding: 15px 15px 50px 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: rotate(-3deg);
+    transition: transform 0.4s ease;
+}
+
+.scrapbook-photo img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    background: white; /* Ensures no grey shows behind image */
+}
+
+.scrapbook-photo:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.scrapbook-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.scrapbook-text h2 {
+    color: #1c9ed9;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.scrapbook-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* --- ABOUT SECTION --- */
 .about { padding: 80px 10%; text-align: center; }
 .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
 .panel {
@@ -184,6 +235,7 @@ nav {
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
+/* --- SPONSORS --- */
 .sponsors { padding: 80px 10%; text-align: center; background-color: #fafdfd; }
 .sponsor-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
 .sponsor-logos img { height: 60px; filter: grayscale(100%); opacity: 0.6; transition: 0.4s; }
@@ -208,7 +260,7 @@ footer {
 .footer-left {
     display: flex;
     gap: 60px;
-    align-items: flex-start;
+    align-items: center; /* Centered with the right side now */
 }
 
 .footer-logo img {
@@ -219,7 +271,7 @@ footer {
 .footer-quick-links {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0;
+    margin: 0;
 }
 
 .footer-quick-links li {
@@ -247,58 +299,13 @@ footer {
 .footer-right {
     flex: 1;
     max-width: 500px;
-    min-width: 320px;
+    text-align: right; /* Aligned text to the right for a clean look */
 }
 
 .footer-right h3 {
     font-size: 28px;
-    margin: 0 0 8px 0;
+    margin: 0 0 15px 0;
     color: #1579a6;
-}
-
-.field-label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.subscribe-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.subscribe-row input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #2c5d6b;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 2px;
-    font-family: 'Fredoka', sans-serif;
-}
-
-.subscribe-btn {
-    padding: 10px 25px;
-    background: transparent;
-    border: 2px solid #2c5d6b;
-    color: #2c5d6b;
-    font-weight: 600;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.subscribe-btn:hover {
-    background: #2c5d6b;
-    color: #c1f2ff;
-}
-
-.subscribe-desc {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-top: 10px;
-    opacity: 0.9;
 }
 
 .footer-bottom {
@@ -345,8 +352,9 @@ footer {
 
 @media (max-width: 850px) {
     .footer-left { gap: 30px; margin-bottom: 30px; width: 100%; justify-content: center; }
-    .footer-right { max-width: 100%; }
+    .footer-right { max-width: 100%; text-align: center; }
     .footer-bottom { flex-direction: column; text-align: center; }
+    .scrapbook-section { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
@@ -396,11 +404,33 @@ footer {
     <div class="slide10"></div>
     
     <div class="hero-text">
-        <h2>Mystic Players Revival</h2>
         <h1>
             <span>Reviving</span> <span>Dreams,</span> <span>One</span> <span>Performance</span> <span>At</span> <span>A Time</span>
         </h1>
         <p>Medford, Massachusetts</p>
+    </div>
+</section>
+
+<div class="divider-line"></div>
+
+<section class="scrapbook-section reveal">
+    <div class="scrapbook-image-container">
+        <div class="scrapbook-photo">
+            <img src="main-photo.jpg" alt="Theater Life">
+        </div>
+    </div>
+    <div class="scrapbook-text">
+        <h2>Why Join Mystic Players Revival?</h2>
+        <p>
+            Joining us isn't just about stepping onto a stage; it's about becoming part of a 
+            vibrant community dedicated to the arts. Whether you're an experienced performer 
+            or looking to find your voice, we provide a welcoming space to grow, create, 
+            and share stories that resonate with the heart of Medford.
+        </p>
+        <p>
+            Discover the joy of collaboration and help us keep the magic of live 
+            theater alive for generations to come.
+        </p>
     </div>
 </section>
 
@@ -460,16 +490,8 @@ footer {
         </div>
 
         <div class="footer-right">
-            <h3>Subscribe for Updates</h3>
-            <label class="field-label">Email</label>
-            <div class="subscribe-row">
-                <input type="email" placeholder="your@email.com">
-                <button class="subscribe-btn">Subscribe</button>
-            </div>
-            
-            <p class="subscribe-desc">
-                By joining our mailing list, you'll be the first to know about upcoming auditions, ticket sales, and special community theater events in Medford.
-            </p>
+            <h3>Reviving Dreams</h3>
+            <p>One Performance At A Time in Medford, MA.</p>
         </div>
     </div>
 
