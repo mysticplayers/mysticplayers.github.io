@@ -58,7 +58,26 @@
         .history-header h1 { font-size: 3rem; margin-bottom: 10px; }
         .history-header p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #666; }
 
-        /* Middle section with black title */
+        /* Photo Separator Styles */
+        .photo-strip {
+            display: flex;
+            gap: 15px;
+            margin: 40px 0 80px 0;
+            overflow: hidden;
+        }
+        .photo-strip img {
+            width: calc(25% - 12px); /* Shows 4 photos across */
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            filter: grayscale(100%);
+            transition: all 0.4s ease;
+        }
+        .photo-strip img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
         .history-mid-section { text-align: center; margin-bottom: 80px; padding: 20px 0; }
         .history-mid-section h2 { font-size: 2.5rem; color: #000000; } 
         .history-mid-section p { max-width: 900px; margin: 0 auto; font-size: 1.1rem; color: #555; }
@@ -75,7 +94,6 @@
             gap: 15px;
             text-align: center;
         }
-        /* Updated: Smaller cursive size */
         .name-item { 
             font-family: 'Dancing Script', cursive; 
             font-size: 1.1rem; 
@@ -125,6 +143,7 @@
         @media (max-width: 850px) {
             .history-bottom-grid { grid-template-columns: 1fr; }
             .video-column { padding-top: 0; }
+            .photo-strip img { width: calc(50% - 8px); } /* 2 per row on mobile */
         }
     </style>
 </head>
@@ -197,9 +216,16 @@
         </div>
     </section>
 
+    <div class="photo-strip">
+        <img src="photo1.jpg" alt="Historical Performance 1">
+        <img src="photo2.jpg" alt="Historical Performance 2">
+        <img src="photo3.jpg" alt="Historical Performance 3">
+        <img src="photo4.jpg" alt="Historical Performance 4">
+    </div>
+
     <section class="history-mid-section">
-        <h2>The Mystic Players Legacy</h2>
-        <p>Although the original Mystic Players was formed by a group of amateur thespians from Trinity Methodist Church on June 10, 1930, a few who remember say that the urge to start such a group was born during their participation in Medford's colossal production of "A Pageant of the Mystic" in 1930, which capped the 300th anniversary celebration of the founding of Medford. The “new” Mystic Players were assembled in 1971, as a guild, under the auspices of the Medford Arts Council. Their first production was a musical, "They Would Be Gentleman," under the direction of Brother Santoro C.F.X. of Malden Catholic High School, which was mounted in the Little Theater in the new High School. Twice yearly, alternate productions of drama (mystery or comedy) and musicals were presented at the Little Theater until the bicentennial year of 1976. In that year, Arts Council members and Pageant Chairman, City Clerk Joseph P. McGonagle requested the Mystic Players present a revised, limited, indoor edition of the 1930 production, "A Pageant of the Mystic." The only facility large enough to accommodate this event was Medford's fine professional and historically significant Chevalier Auditorium. Following five successful performances of "The Pageant of the Mystic," the guild decided to form their own organization as a member of the Arts Council. They changed their name to the Mystic Players and elected Joseph Sabia and Lois Carr as co-chairmen.</p>
+        <h2>A Legacy of Performance</h2>
+        <p>From our very first production to the latest standing ovation, the history of the Mystic Players is a story of community, passion, and the enduring power of the arts. We invite you to explore the archives below to see the shows and moments that defined our journey through the years.</p>
     </section>
 
     <div class="history-bottom-grid">
