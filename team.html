@@ -225,8 +225,8 @@
             padding: 60px 5% 30px 5%;
             color: #2c5d6b;
             border-top: 2px solid #abe2f0;
-            margin-top: 0; /* Removed margin to sit flush */
-            text-align: left; /* Reset from About Us center align */
+            margin-top: 0;
+            text-align: left;
         }
 
         .footer-top {
@@ -240,7 +240,7 @@
         .footer-left {
             display: flex;
             gap: 60px;
-            align-items: flex-start;
+            align-items: center; /* Centered layout for clean aesthetic */
         }
 
         .footer-logo img {
@@ -251,7 +251,7 @@
         .footer-quick-links {
             list-style: none;
             padding: 0;
-            margin: 10px 0 0 0;
+            margin: 0;
         }
 
         .footer-quick-links li {
@@ -279,58 +279,13 @@
         .footer-right {
             flex: 1;
             max-width: 500px;
-            min-width: 320px;
+            text-align: right; /* Aligned right to balance the logo */
         }
 
         .footer-right h3 {
             font-size: 28px;
-            margin: 0 0 8px 0;
+            margin: 0 0 10px 0;
             color: #1579a6;
-        }
-
-        .field-label {
-            display: block;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .subscribe-row {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .subscribe-row input {
-            flex: 1;
-            padding: 12px;
-            border: 1px solid #2c5d6b;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 2px;
-            font-family: 'Fredoka', sans-serif;
-        }
-
-        .subscribe-btn {
-            padding: 10px 25px;
-            background: transparent;
-            border: 2px solid #2c5d6b;
-            color: #2c5d6b;
-            font-weight: 600;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .subscribe-btn:hover {
-            background: #2c5d6b;
-            color: #c1f2ff;
-        }
-
-        .subscribe-desc {
-            font-size: 14px;
-            line-height: 1.5;
-            margin-top: 10px;
-            opacity: 0.9;
         }
 
         .footer-bottom {
@@ -379,8 +334,8 @@
         @media (max-width: 850px) {
             .about-grid { grid-template-columns: 1fr; text-align: center; }
             .nav-links { display: none; }
-            .footer-left { gap: 30px; margin-bottom: 30px; width: 100%; justify-content: center; }
-            .footer-right { max-width: 100%; }
+            .footer-left { gap: 30px; margin-bottom: 30px; width: 100%; justify-content: center; flex-direction: column; }
+            .footer-right { max-width: 100%; text-align: center; }
             .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
@@ -426,11 +381,9 @@
         <div class="about-grid">
             <div class="about-text">
                 <h2>Our Story</h2>
-                <p>Our company was born out of a shared love for theater and a chance meeting in a Facebook group. In 2023, Margaret—a lifelong theater lover who had spent years on stage and behind the scenes created “Bring Community Theater Back to Medford, MA.” She didn’t know exactly what would come of it, only that she missed the magic of live performance in her hometown and hoped others did too.
-                That group brought together the four of us! all Medford residents who care deeply about our community. Danielle and Robert, both theater professors at colleges in the city, saw the post and immediately connected with the vision. Jim, a scientist with a lifelong love for the arts, joined too, bringing fresh eyes and boundless enthusiasm. Soon we were meeting in the little conference rooms at Margaret’s apartment building, sharing ideas, swapping stories, and discovering that we had more than just theater in common we were building a genuine friendship.</p>
+                <p>Our company was born out of a shared love for theater and a chance meeting in a Facebook group. In 2023, Margaret—a lifelong theater lover who had spent years on stage and behind the scenes created “Bring Community Theater Back to Medford, MA.” She didn’t know exactly what would come of it, only that she missed the magic of live performance in her hometown and hoped others did too.</p>
 
-                <p>What started as conversations about shows and stages quickly grew into late-night laughter, shared meals, and a bond that feels more like family than a board. Each of us brings something different to the table but what ties it all together is the joy we find in working side by side.
-                We didn’t just create a theater company. we found each other. And together, as neighbors, friends, and artists, we’re committed to bringing theater back to Medford in a way that celebrates both the art form we love and the friendships that make it possible.</p>
+                <p>What started as conversations about shows and stages quickly grew into late-night laughter, shared meals, and a bond that feels more like family than a board. Each of us brings something different to the table but what ties it all together is the joy we find in working side by side.</p>
             </div>
             <div class="about-image">
                 <img src="theatre-interior.jpg" alt="Interior of our theatre">
@@ -458,7 +411,7 @@
                 <div class="team-info">
                     <span class="team-title">Vice President</span>
                     <h3 class="team-name">Robert Lublin</h3>
-                    <p class="team-bio">I wasn’t born in Medford, but it has become my forever home since moving here 12 years ago. I hold a Ph.D. in Theatre from Ohio State University and am a Professor of Theatre Arts at UMass Boston, where I teach, direct productions, and have served as Department Chair; I’m passionate about theatre and excited to help build a vibrant community theater in Medford!</p>
+                    <p class="team-bio">I hold a Ph.D. in Theatre from Ohio State University and am a Professor of Theatre Arts at UMass Boston. I’m passionate about theatre and excited to help build a vibrant community theater in Medford!</p>
                     <p class="team-quote">"Heavy is the head that wears a crown"</p>
                 </div>
             </div>
@@ -468,7 +421,7 @@
                 <div class="team-info">
                     <span class="team-title">Secretary</span>
                     <h3 class="team-name">Danielle Herget</h3>
-                    <p class="team-bio">I’m originally from Braintree, MA, and have lived in the Somerville/Medford area for about 20 years. I hold a Ph.D. in Drama from Tufts and have been a Professor of Theater and Humanities at Fisher College since 2003, and I’m thrilled to join this team in bringing more theater to Medford.</p>
+                    <p class="team-bio">I hold a Ph.D. in Drama from Tufts and have been a Professor of Theater and Humanities at Fisher College since 2003. I’m thrilled to join this team in bringing more theater to Medford.</p>
                     <p class="team-quote">"She's a highly specialized key component of operational unity"</p>
                 </div>
             </div>
@@ -478,7 +431,7 @@
                 <div class="team-info">
                     <span class="team-title">Treasurer</span>
                     <h3 class="team-name">Jim Sampson</h3>
-                    <p class="team-bio">Scientist by day, ballroom dancing martial artist by night. It’s been a long time since I’ve participated in shows directly, but I’m hoping to bring my unique mix of skills and pluck to the table to enable community-enriching theater in Medford! When not pursuing quijotic endeavors you can usually find me adventuring outdoors or with my nose in a book (sometimes both) </p>
+                    <p class="team-bio">Scientist by day, ballroom dancing martial artist by night. I’m hoping to bring my unique mix of skills and pluck to the table to enable community-enriching theater in Medford!</p>
                     <p class="team-quote">"I am the very model of a modern major treasurer"</p>
                 </div>
             </div>
@@ -501,16 +454,8 @@
         </div>
 
         <div class="footer-right">
-            <h3>Subscribe for Updates</h3>
-            <label class="field-label">Email</label>
-            <div class="subscribe-row">
-                <input type="email" placeholder="your@email.com">
-                <button class="subscribe-btn">Subscribe</button>
-            </div>
-            
-            <p class="subscribe-desc">
-                By joining our mailing list, you'll be the first to know about upcoming auditions, ticket sales, and special community theater events in Medford.
-            </p>
+            <h3>Reviving Dreams</h3>
+            <p>One Performance At A Time in Medford, MA.</p>
         </div>
     </div>
 
@@ -531,18 +476,6 @@
         Registered 501(C)(3). © 2026 Mystic Players Revival. All Rights Reserved.
     </div>
 </footer>
-
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
