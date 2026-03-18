@@ -79,7 +79,7 @@
 
         /* Legacy Section Styling */
         .legacy-section { text-align: center; margin: 60px 0; }
-        .legacy-section h2 { font-size: 2.5rem; color: #000000; margin-bottom: 20px; }
+        .legacy-section h2 { font-size: 2.5rem; color: #1c9ed9; margin-bottom: 20px; }
         
         .legacy-box {
             background: #c1f2ff;
@@ -109,6 +109,7 @@
             color: #2c5d6b; 
         }
 
+        /* Bottom Grid Layout */
         .history-bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -136,6 +137,7 @@
         }
         .year { font-weight: 500; color: #000000; }
 
+        /* Video Column */
         .video-column { display: flex; flex-direction: column; gap: 25px; padding-top: 65px; } 
         .video-wrapper h3 { font-size: 1.1rem; margin-bottom: 10px; color: #1c9ed9; }
         .video-container {
@@ -144,7 +146,7 @@
         }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* --- FOOTER --- */
+        /* --- FOOTER STYLES --- */
         footer {
             background: #c1f2ff;
             padding: 60px 5% 30px 5%;
@@ -152,13 +154,115 @@
             border-top: 2px solid #abe2f0;
             margin-top: 60px;
         }
-        .footer-top { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
-        .footer-logo img { height: 110px; }
+
+        .footer-top {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        .footer-left {
+            display: flex;
+            gap: 60px;
+            align-items: center; 
+        }
+
+        .footer-logo img {
+            height: 110px;
+            width: auto;
+        }
+
+        .footer-quick-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-quick-links li {
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .footer-quick-links a {
+            text-decoration: none;
+            color: #2c5d6b;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-quick-links a::before {
+            content: "→";
+            margin-right: 10px;
+            color: #2c5d6b;
+            font-weight: bold;
+        }
+
+        .footer-right {
+            flex: 1;
+            max-width: 500px;
+            text-align: right; 
+        }
+
+        .footer-right h3 {
+            font-size: 28px;
+            margin: 0 0 15px 0;
+            color: #1579a6;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(44, 93, 107, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links img {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            padding: 6px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover img { transform: scale(1.15); }
+
+        .contact-info-line {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .copyright-small {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 25px;
+            opacity: 0.6;
+        }
 
         @media (max-width: 850px) {
             .history-bottom-grid { grid-template-columns: 1fr; }
             .video-column { padding-top: 0; }
             .photo-strip img { width: calc(50% - 8px); } 
+            .footer-left { gap: 30px; margin-bottom: 30px; width: 100%; justify-content: center; }
+            .footer-right { max-width: 100%; text-align: center; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -232,10 +336,10 @@
     </section>
 
     <div class="photo-strip">
-        <img src="photo1.jpg" alt="Historical Performance 1">
-        <img src="photo2.jpg" alt="Historical Performance 2">
-        <img src="photo3.jpg" alt="Historical Performance 3">
-        <img src="photo4.jpg" alt="Historical Performance 4">
+        <img src="photo1.jpg" alt="History 1">
+        <img src="photo2.jpg" alt="History 2">
+        <img src="photo3.jpg" alt="History 3">
+        <img src="photo4.jpg" alt="History 4">
     </div>
 
     <section class="legacy-section">
@@ -246,10 +350,10 @@
     </section>
 
     <div class="photo-strip">
-        <img src="photo5.jpg" alt="Historical Performance 5">
-        <img src="photo6.jpg" alt="Historical Performance 6">
-        <img src="photo7.jpg" alt="Historical Performance 7">
-        <img src="photo8.jpg" alt="Historical Performance 8">
+        <img src="photo5.jpg" alt="History 5">
+        <img src="photo6.jpg" alt="History 6">
+        <img src="photo7.jpg" alt="History 7">
+        <img src="photo8.jpg" alt="History 8">
     </div>
 
     <div class="history-bottom-grid">
@@ -257,28 +361,44 @@
             <h2>Production Archive</h2>
             <section class="shows-box">
                 <ul class="show-list">
-                    <li><span>The Inaugural Revival Gala</span> <span class="year">(2023)</span></li>
-                    <li><span>Medford Shorts: Original Works</span> <span class="year">(2023)</span></li>
-                    <li><span>A Midsummer Night's Dream</span> <span class="year">(2024)</span></li>
-                    <li><span>Death of a Salesman</span> <span class="year">(2024)</span></li>
-                    <li><span>Steel Magnolias</span> <span class="year">(2024)</span></li>
-                    <li><span>The Glass Menagerie</span> <span class="year">(2024)</span></li>
-                    <li><span>Holiday Radio Play Live</span> <span class="year">(2024)</span></li>
-                    <li><span>Into the Woods</span> <span class="year">(2025)</span></li>
-                    <li><span>The Crucible</span> <span class="year">(2025)</span></li>
-                    <li><span>Twelve Angry Jurors</span> <span class="year">(2025)</span></li>
-                    <li><span>Little Shop of Horrors</span> <span class="year">(2025)</span></li>
-                    <li><span>The Importance of Being Earnest</span> <span class="year">(2025)</span></li>
-                    <li><span>Rent: In Concert</span> <span class="year">(2025)</span></li>
-                    <li><span>Spring Awakening</span> <span class="year">(2025)</span></li>
-                    <li><span>Our Town</span> <span class="year">(2026)</span></li>
-                    <li><span>Blithe Spirit</span> <span class="year">(2026)</span></li>
-                    <li><span>Wait Until Dark</span> <span class="year">(2026)</span></li>
-                    <li><span>Guys and Dolls</span> <span class="year">(2026)</span></li>
-                    <li><span>The Odd Couple</span> <span class="year">(2026)</span></li>
-                    <li><span>Cabaret: Season Finale</span> <span class="year">(2026)</span></li>
+                    <li><span>The Mouse That Roared</span> <span class="year">(1972)</span></li>
+                    <li><span>Plaza Suite</span> <span class="year">(1973)</span></li>
+                    <li><span>Oliver</span> <span class="year">(1974)</span></li>
+                    <li><span>Flower Drum Song, George Washington Slept Here </span> <span class="year">(1975)</span></li>
+                    <li><span>Pageant Along The Mystic, Bull In A China Shop </span> <span class="year">(1976)</span></li>
+                    <li><span>Irene, Sondheim Revue, You Can't Take It With You </span> <span class="year">(1977)</span></li>
+                    <li><span>Anything Goes, Kiss or Make Up Live</span> <span class="year">(1978)</span></li>
+                    <li><span>Take It Slow, Light & Lovely (Revue), Walking Happy </span> <span class="year">(1979)</span></li>
+                    <li><span>Soapy Murder Case, Rogers & Hart Revue, 350th Show, Mame </span> <span class="year">(1980)</span></li>
+                    <li><span>Plaza Suite, By George (Revue), Arsenic & Old Lace</span> <span class="year">(1981)</span></li>
+                    <li><span>Strictly Irving, Hooked On Broadway, Gypsy </span> <span class="year">(1982)</span></li>
+                    <li><span>The Man Who Came To Dinner, My Fair Lady </span> <span class="year">(1983)</span></li>
+                    <li><span>Never Too Late, Some Enchanted Evening, Sound Of Music </span> <span class="year">(1984)</span></li>
+                    <li><span>A Murder Is Announced, Chicago, Born Yesterday</span> <span class="year">(1985)</span></li>
+                    <li><span>Come Back To The Five & Dime, Jimmy Dean, What The Heck, Music Man</span> <span class="year">(1986)</span></li>
+                    <li><span>Lovers & Other Strangers, What The Heck, Sweet Charity</span> <span class="year">(1987)</span></li>
+                    <li><span>Witness For The Prosecution, Cabaret</span> <span class="year">(1988)</span></li>
+                    <li><span>Brighton Beach Memoirs, Here We Go Again, Pajama Game </span> <span class="year">(1989)</span></li>
+                    <li><span>The Butler Did It, I Wish, Funny Girl </span> <span class="year">(1990)</span></li>
+                    <li><span>Take 20 (Anniversary Show), Annie </span> <span class="year">(1991)</span></li>
+                    <li><span>Showboat, Rumors</span> <span class="year">(1992)</span></li>
+                    <li><span>The King & I, The Night of January 16th </span> <span class="year">(1993)</span></li>
+                    <li><span>Meet Me In St. Louis, LaCage Aux Follies </span> <span class="year">(1994)</span></li>
+                    <li><span>How Green Was My Brownie, South Pacific </span> <span class="year">(1995)</span></li>
+                    <li><span>Lost In Yonkers, Music Man, Oklahoma </span> <span class="year">(1996)</span></li>
+                    <li><span>Camelot </span> <span class="year">(1997)</span></li>
+                    <li><span>You Can't Take It With You, H2$, A Christmas Carol </span> <span class="year">(1998)</span></li>
+                     <li><span>Guys & Dolls, A Christmas Carol </span> <span class="year">(1999)</span></li>
+                     <li><span>Run For Your Wife, Little Shop Of Horrors, A Christmas Carol </span> <span class="year">(2000)</span></li>
+                     <li><span>Oliver, Anything Goes, A Christmas Carol </span> <span class="year">(2001)</span></li>
+                     <li><span>Let's Do It Again, Peter Pan, A Christmas Carol </span> <span class="year">(2002)</span></li>
+                     <li><span>42nd Street, Holly Jolly Follies </span> <span class="year">(2003)</span></li>
+                     <li><span>Spring Chicken, Bye Bye Birdie, Holly Jolly Follies</span> <span class="year">(2004)</span></li>
+                     <li><span>Ten Little Indians, Peter Pan </span> <span class="year">(2005)</span></li>
+                     <li><span>Arsenic & Old Lace </span> <span class="year">(2006)</span></li>
+                     <li><span>Cabaret, A Christmas Carol </span> <span class="year">(2007)</span></li>
                 </ul>
-            </section>
+             </section>
         </div>
 
         <section class="video-column">
@@ -307,11 +427,34 @@
 <footer>
     <div class="footer-top">
         <div class="footer-left">
-            <div class="footer-logo"><img src="logo.png" alt="Logo"></div>
+            <div class="footer-logo">
+                <img src="logo.png" alt="Mystic Players Logo">
+            </div>
+            <ul class="footer-quick-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="season.html">Current Season</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-        <div class="footer-bottom">
-            <p>Medford, MA 02155 // 781-799-4373 // mysticplayersrevival@gmail.com</p>
-            <p>© 2026 Mystic Players Revival. All Rights Reserved.</p>
+        <div class="footer-right">
+            <h3>Mystic Players Revival</h3>
+            <p>Reviving Dreams, One Performance At A Time.</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="social-links">
+            <a href="#"><img src="fb-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="ig-icon.png" alt="Instagram"></a>
+            <a href="#"><img src="tiktok-icon.png" alt="TikTok"></a>
+            <a href="#"><img src="yt-icon.png" alt="YouTube"></a>
+        </div>
+        <div class="contact-info-line">
+            Medford, MA 02155 // mysticplayersrevival@gmail.com
+        </div>
+        <div class="copyright-small">
+            © 2026 Mystic Players Revival. All Rights Reserved.
         </div>
     </div>
 </footer>
