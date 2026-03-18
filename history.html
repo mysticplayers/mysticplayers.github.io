@@ -61,7 +61,7 @@
         .photo-strip {
             display: flex;
             gap: 15px;
-            margin: 40px 0 60px 0;
+            margin: 40px 0;
             overflow: hidden;
         }
         .photo-strip img {
@@ -77,9 +77,16 @@
             transform: scale(1.02);
         }
 
-        .history-mid-section { text-align: center; margin-bottom: 40px; padding: 20px 0; }
-        .history-mid-section h2 { font-size: 2.5rem; color: #000000; } 
-        .history-mid-section p { max-width: 900px; margin: 0 auto; font-size: 1.1rem; color: #555; }
+        /* Legacy Section Styling */
+        .legacy-section { text-align: center; margin: 60px 0; }
+        .legacy-section h2 { font-size: 2.5rem; color: #000000; margin-bottom: 20px; }
+        
+        .legacy-box {
+            background: #c1f2ff;
+            border-radius: 15px;
+            padding: 40px 30px;
+        }
+        .legacy-box p { max-width: 900px; margin: 0 auto; font-size: 1.15rem; color: #2c5d6b; }
 
         .names-box {
             background: #c1f2ff;
@@ -112,9 +119,12 @@
 
         .archive-section h2 { font-size: 2.5rem; margin-bottom: 25px; color: #1c9ed9; text-align: center; }
 
-        .shows-box { background: #c1f2ff; border-radius: 15px; padding: 30px; }
+        .shows-box { 
+            background: #c1f2ff; 
+            border-radius: 15px; 
+            padding: 30px; 
+        }
         .show-list { list-style: none; padding: 0; margin: 0; }
-        
         .show-list li {
             padding: 8px 0;
             display: flex;
@@ -124,8 +134,6 @@
             color: #2c5d6b;
             text-align: center;
         }
-        
-        /* Updated: Lower font-weight (500) for a cleaner, professional look */
         .year { font-weight: 500; color: #000000; }
 
         .video-column { display: flex; flex-direction: column; gap: 25px; padding-top: 65px; } 
@@ -230,9 +238,11 @@
         <img src="photo4.jpg" alt="Historical Performance 4">
     </div>
 
-    <section class="history-mid-section">
-        <h2>The Mystic Players Legacy</h2>
-        <p>Although the original Mystic Players was formed by a group of amateur thespians from Trinity Methodist Church on June 10, 1930, a few who remember say that the urge to start such a group was born during their participation in Medford's colossal production of "A Pageant of the Mystic" in 1930, which capped the 300th anniversary celebration of the founding of Medford. The “new” Mystic Players were assembled in 1971, as a guild, under the auspices of the Medford Arts Council. Their first production was a musical, "They Would Be Gentleman," under the direction of Brother Santoro C.F.X. of Malden Catholic High School, which was mounted in the Little Theater in the new High School. Twice yearly, alternate productions of drama (mystery or comedy) and musicals were presented at the Little Theater until the bicentennial year of 1976. In that year, Arts Council members and Pageant Chairman, City Clerk Joseph P. McGonagle requested the Mystic Players present a revised, limited, indoor edition of the 1930 production, "A Pageant of the Mystic." The only facility large enough to accommodate this event was Medford's fine professional and historically significant Chevalier Auditorium. Following five successful performances of "The Pageant of the Mystic," the guild decided to form their own organization as a member of the Arts Council. They changed their name to the Mystic Players and elected Joseph Sabia and Lois Carr as co-chairmen.</p>
+    <section class="legacy-section">
+        <h2>A Legacy of Performance</h2>
+        <div class="legacy-box">
+            <p>From our very first production to the latest standing ovation, the history of the Mystic Players is a story of community and passion. We continue to build on the foundation laid by those who came before us.</p>
+        </div>
     </section>
 
     <div class="photo-strip">
@@ -300,7 +310,7 @@
             <div class="footer-logo"><img src="logo.png" alt="Logo"></div>
         </div>
         <div class="footer-bottom">
-            <p>Medford, MA 02155 // mysticplayersrevival@gmail.com</p>
+            <p>Medford, MA 02155 // 781-799-4373 // mysticplayersrevival@gmail.com</p>
             <p>© 2026 Mystic Players Revival. All Rights Reserved.</p>
         </div>
     </div>
