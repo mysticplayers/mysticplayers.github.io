@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our History | Mystic Players Revival</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     
     <style>
         /* --- GLOBAL STYLES --- */
@@ -62,11 +62,11 @@
         .photo-strip {
             display: flex;
             gap: 15px;
-            margin: 40px 0 80px 0;
+            margin: 40px 0 60px 0;
             overflow: hidden;
         }
         .photo-strip img {
-            width: calc(25% - 12px); /* Shows 4 photos across */
+            width: calc(25% - 12px); 
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
@@ -78,7 +78,7 @@
             transform: scale(1.02);
         }
 
-        .history-mid-section { text-align: center; margin-bottom: 80px; padding: 20px 0; }
+        .history-mid-section { text-align: center; margin-bottom: 40px; padding: 20px 0; }
         .history-mid-section h2 { font-size: 2.5rem; color: #000000; } 
         .history-mid-section p { max-width: 900px; margin: 0 auto; font-size: 1.1rem; color: #555; }
 
@@ -94,10 +94,13 @@
             gap: 15px;
             text-align: center;
         }
+
+        /* Updated: Matched font, professional weight, clean spacing */
         .name-item { 
-            font-family: 'Dancing Script', cursive; 
-            font-size: 1.1rem; 
-            font-weight: 600; 
+            font-family: 'Fredoka', sans-serif; 
+            font-size: 1.05rem; 
+            font-weight: 500; 
+            letter-spacing: 0.2px;
             color: #2c5d6b; 
         }
 
@@ -106,6 +109,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: start;
+            margin-top: 60px;
         }
 
         .archive-section h2 { font-size: 2.5rem; margin-bottom: 25px; color: #1c9ed9; }
@@ -119,7 +123,8 @@
             font-size: 0.95rem;
             color: #2c5d6b;
         }
-        .year { font-weight: 700; color: #1c9ed9; }
+        /* Updated: Year text set to black */
+        .year { font-weight: 700; color: #000000; }
 
         .video-column { display: flex; flex-direction: column; gap: 25px; padding-top: 65px; } 
         .video-wrapper h3 { font-size: 1.1rem; margin-bottom: 10px; color: #1c9ed9; }
@@ -143,7 +148,7 @@
         @media (max-width: 850px) {
             .history-bottom-grid { grid-template-columns: 1fr; }
             .video-column { padding-top: 0; }
-            .photo-strip img { width: calc(50% - 8px); } /* 2 per row on mobile */
+            .photo-strip img { width: calc(50% - 8px); } 
         }
     </style>
 </head>
@@ -183,7 +188,7 @@
 <div class="container">
     <section class="history-header">
         <h1>Those Who Raised The Curtain</h1>
-        <p>Honoring the visionaries, performers, and behind-the-scenes champions who helped bring the Mystic Players to life. Their creativity and dedication lit the stage then and continue to inspire our revival now.</p>
+        <p>Honoring the visionaries, performers, and behind-the-scenes champions who helped bring the Mystic Players to life.</p>
     </section>
 
     <section class="names-box">
@@ -225,8 +230,15 @@
 
     <section class="history-mid-section">
         <h2>A Legacy of Performance</h2>
-        <p>From our very first production to the latest standing ovation, the history of the Mystic Players is a story of community, passion, and the enduring power of the arts. We invite you to explore the archives below to see the shows and moments that defined our journey through the years.</p>
+        <p>From our very first production to the latest standing ovation, the history of the Mystic Players is a story of community and passion.</p>
     </section>
+
+    <div class="photo-strip">
+        <img src="photo5.jpg" alt="Historical Performance 5">
+        <img src="photo6.jpg" alt="Historical Performance 6">
+        <img src="photo7.jpg" alt="Historical Performance 7">
+        <img src="photo8.jpg" alt="Historical Performance 8">
+    </div>
 
     <div class="history-bottom-grid">
         <div class="archive-section">
